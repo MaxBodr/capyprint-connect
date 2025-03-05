@@ -1,13 +1,69 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
+import Benefits from '@/components/Benefits';
+import Audience from '@/components/Audience';
+import ProfitCalculator from '@/components/ProfitCalculator';
+import Testimonials from '@/components/Testimonials';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scroll behavior for anchor links
+    const smoothScroll = (e: Event, elem: HTMLAnchorElement) => {
+      e.preventDefault();
+      const href = elem.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => smoothScroll(e, anchor as HTMLAnchorElement));
+    });
+
+    return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', (e) => smoothScroll(e, anchor as HTMLAnchorElement));
+      });
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <AnimatePresence>
+      <div className="min-h-screen overflow-x-hidden">
+        <Header />
+        
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Hero />
+          <HowItWorks />
+          <Benefits />
+          <Audience />
+          <ProfitCalculator />
+          <Testimonials />
+          <ContactForm />
+        </motion.main>
+        
+        <Footer />
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 
