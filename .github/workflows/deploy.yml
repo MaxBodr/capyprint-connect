@@ -29,4 +29,7 @@ jobs:
           git config --global user.name "MaxBodr"
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
