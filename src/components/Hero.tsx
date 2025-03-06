@@ -56,17 +56,23 @@ const Hero = () => {
         >
           <div className="relative">
             <div className="w-full max-w-md">
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  <div className="ml-4 text-sm text-gray-500">CapyPrint Bot</div>
+              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40 relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                    <div className="ml-4 text-sm text-gray-500">CapyPrint Bot</div>
+                  </div>
+                  {/* Логотип справа от названия */}
+                  <img src="/Logo CapyPrint (3).png" alt="CapyPrint Logo" className="w-6 h-6 rounded-full" />
                 </div>
+                
                 <div className="space-y-4">
                   <div className="flex">
                     <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
-                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
+                      {/* Логотип вместо иконки Bot в сообщениях */}
+                      <img src="/Logo CapyPrint (3).png" alt="CapyPrint Logo" className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">Добро пожаловать в CapyPrint! Что бы вы хотели распечатать сегодня?</p>
                     </div>
                   </div>
@@ -78,7 +84,8 @@ const Hero = () => {
                   </div>
                   <div className="flex">
                     <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
-                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
+                      {/* Логотип вместо иконки Bot в сообщениях */}
+                      <img src="/Logo CapyPrint (3).png" alt="CapyPrint Logo" className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">Отлично! Загрузите ваш PDF-файл, и я рассчитаю стоимость печати.</p>
                     </div>
                   </div>
