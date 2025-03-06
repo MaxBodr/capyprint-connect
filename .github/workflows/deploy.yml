@@ -20,16 +20,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install gh-pages
+        run: npm install -g gh-pages
+
       - name: Build project
         run: npm run build
 
       - name: Configure Git
         run: |
           git config --global user.email "macsibodrov@gmail.com"
-          git config --global user.name "MaxBodr"
+          git config --global user.name "github-actions[bot]"
 
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/YOUR_USERNAME/YOUR_REPO.git
+          gh-pages -d dist
