@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/capyprint-connect/", // Название репозитория
+  base: "./", // ✅ УБРАЛ `/capyprint-connect/`
   server: {
     host: "::",
     port: 8080,
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     rollupOptions: {
-      input: "index.html",
+      input: path.resolve(__dirname, "index.html"), // ✅ Явно указываем `index.html`
     },
   },
 }));
