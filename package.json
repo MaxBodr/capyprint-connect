@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "git config --global user.email 'macsibodrov@gmail.com' && git config --global user.name 'MaxBodr' && vite build && gh-pages -d dist"
+    "deploy": "npm run build && cp -r dist/* . && git add . && git commit -m 'Deploy' && git push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
