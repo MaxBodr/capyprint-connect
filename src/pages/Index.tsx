@@ -5,9 +5,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import Benefits from '@/components/Benefits';
-import Audience from '@/components/Audience';
 import ProfitCalculator from '@/components/ProfitCalculator';
-import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
@@ -55,9 +53,7 @@ const Index = () => {
           <Hero />
           <HowItWorks />
           <Benefits />
-          <Audience />
           <ProfitCalculator />
-          <Testimonials />
           <ContactForm />
         </motion.main>
         

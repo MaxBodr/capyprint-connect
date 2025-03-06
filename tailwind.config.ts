@@ -66,7 +66,7 @@ export default {
 				capyprint: {
 					primary: '#eaaa5e',    // Main accent color (60%)
 					secondary: '#ac8b67',  // Secondary color (30%)
-					background: '#fff8ee', // Light background (60%)
+					background: '#fff8f0', // Light background (60%) - updated to be closer to white
 					muted: '#dfe0df',      // Muted elements (10%)
 					white: '#FFFFFF',
 					black: '#1A1A1A',
