@@ -41,7 +41,7 @@ const Hero = () => {
             CapyPrint – Умный сервис печати через Telegram
           </h1>
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-xl mx-auto md:mx-0">
-            Автоматизируйте процессы печати в каворкингах, профкомах, университетах и школах. Без сложных настроек – просто, удобно, быстро!
+            Автоматизируйте процессы печати в коворкингах, профкомах, университетах и школах. Без сложных настроек – просто, удобно, быстро!
           </p>
           <Button onClick={scrollToContact} className="cta-button text-lg">
             Попробовать
