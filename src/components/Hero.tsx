@@ -93,19 +93,19 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <motion.div className="absolute -bottom-6 -right-6 w-24 h-24 bg-capyprint-primary/20 rounded-full" animate={{
+            <motion.div animate={{
             scale: [1, 1.1, 1]
           }} transition={{
             repeat: Infinity,
             duration: 3
-          }}></motion.div>
-            <motion.div className="absolute -top-6 -left-6 w-16 h-16 bg-capyprint-primary/10 rounded-full" animate={{
+          }} className="absolute -bottom-6 -right-6 w-10 h-10 bg-capyprint-primary/20 rounded-full px-0 py-0 mx-[16px] my-[27px]"></motion.div>
+            <motion.div animate={{
             scale: [1, 1.2, 1]
           }} transition={{
             repeat: Infinity,
             duration: 4,
             delay: 1
-          }}></motion.div>
+          }} className="absolute -top-6 -left-6 w-16 h-16 bg-capyprint-primary/10 rounded-full mx-0"></motion.div>
           </div>
         </motion.div>
       </div>
