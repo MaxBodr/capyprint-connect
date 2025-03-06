@@ -58,7 +58,7 @@ const Hero = () => {
       }}>
           <div className="relative">
             <div className="w-full max-w-md">
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40">
+              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40 py-[24px] mx-0 my-[10px]">
                 <div className="flex items-center mb-4">
                   <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
