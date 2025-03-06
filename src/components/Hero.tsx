@@ -15,7 +15,7 @@ const Hero = () => {
       });
     }
   };
-  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-white to [#20f020] bg-[#fffbf8]">
+  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#fbf6ea]">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
@@ -32,7 +32,7 @@ const Hero = () => {
       }} transition={{
         duration: 0.6
       }}>
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-capyprint-primary/10 rounded-full text-[#f3a03e]">
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
             Инновационное решение для печати
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-4">
