@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/capyprint-connect/", // Название репозитория
+  plugins: [react()],
   server: {
     host: "::",
     port: 8080,
