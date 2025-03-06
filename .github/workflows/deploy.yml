@@ -3,15 +3,30 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'npm'
-      - run: npm install
-      - run: npm run build
-      - run: npm run deploy  # настрой команду деплоя в package.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "macsibodrov@gmail.com"
+          git config --global user.name "MaxBodr"
+
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d dist
