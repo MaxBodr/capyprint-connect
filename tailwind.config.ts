@@ -64,7 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				capyprint: {
-					orange: '#E48D36',
+					primary: '#eaaa5e',    // Main accent color (60%)
+					secondary: '#ac8b67',  // Secondary color (30%)
+					background: '#fff8ee', // Light background (60%)
+					muted: '#dfe0df',      // Muted elements (10%)
 					white: '#FFFFFF',
 					black: '#1A1A1A',
 					gray: '#333333'

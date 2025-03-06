@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { MessageCircle, Bot } from 'lucide-react';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -22,8 +23,8 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-orange/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-orange/5 rounded-full blur-2xl"></div>
+        <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-primary/5 rounded-full blur-2xl"></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
@@ -33,7 +34,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-orange bg-capyprint-orange/10 rounded-full">
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
             Инновационное решение для печати
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-4">
@@ -64,22 +65,26 @@ const Hero = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex">
-                    <div className="bg-blue-100 rounded-lg p-3 max-w-xs">
+                    <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
+                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">Добро пожаловать в CapyPrint! Что бы вы хотели распечатать сегодня?</p>
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className="bg-capyprint-orange/10 rounded-lg p-3 max-w-xs">
+                    <div className="bg-capyprint-primary/10 rounded-lg p-3 max-w-xs relative">
+                      <MessageCircle className="absolute -right-8 top-1/2 -translate-y-1/2 bg-capyprint-primary text-white p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">Мне нужно распечатать документ PDF</p>
                     </div>
                   </div>
                   <div className="flex">
-                    <div className="bg-blue-100 rounded-lg p-3 max-w-xs">
+                    <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
+                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">Отлично! Загрузите ваш PDF-файл, и я рассчитаю стоимость печати.</p>
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className="bg-capyprint-orange/10 rounded-lg p-3 max-w-xs animate-pulse-subtle">
+                    <div className="bg-capyprint-primary/10 rounded-lg p-3 max-w-xs animate-pulse-subtle relative">
+                      <MessageCircle className="absolute -right-8 top-1/2 -translate-y-1/2 bg-capyprint-primary text-white p-1 rounded-full w-6 h-6" />
                       <p className="text-sm">*загружает файл...*</p>
                     </div>
                   </div>
@@ -87,12 +92,12 @@ const Hero = () => {
               </div>
             </div>
             <motion.div 
-              className="absolute -bottom-6 -right-6 w-24 h-24 bg-capyprint-orange/20 rounded-full"
+              className="absolute -bottom-6 -right-6 w-24 h-24 bg-capyprint-primary/20 rounded-full"
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 3 }}
             ></motion.div>
             <motion.div 
-              className="absolute -top-6 -left-6 w-16 h-16 bg-capyprint-orange/10 rounded-full"
+              className="absolute -top-6 -left-6 w-16 h-16 bg-capyprint-primary/10 rounded-full"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 4, delay: 1 }}
             ></motion.div>

@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 32 74% 55%;
+    --primary: 35 74% 64%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 29 22% 54%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 160 2% 88%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 32 74% 55%;
+    --accent: 35 74% 64%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 32 74% 55%;
+    --ring: 35 74% 64%;
 
     --radius: 0.75rem;
   }
@@ -48,16 +48,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 32 74% 55%;
+    --primary: 35 74% 64%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 29 22% 54%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 32 74% 55%;
+    --accent: 35 74% 64%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -65,7 +65,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 32 74% 55%;
+    --ring: 35 74% 64%;
   }
 }
 
@@ -75,7 +75,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-capyprint-background text-foreground font-sans antialiased;
   }
 
   .glass-card {
@@ -93,9 +93,9 @@
   }
   
   .cta-button {
-    @apply bg-capyprint-orange text-white font-medium px-6 py-3 rounded-lg 
-    transition-all duration-300 hover:shadow-md hover:shadow-capyprint-orange/20 hover:scale-105
-    focus:outline-none focus:ring-2 focus:ring-capyprint-orange/50 focus:ring-offset-2;
+    @apply bg-capyprint-primary text-white font-medium px-6 py-3 rounded-lg 
+    transition-all duration-300 hover:shadow-md hover:shadow-capyprint-primary/20 hover:scale-105
+    focus:outline-none focus:ring-2 focus:ring-capyprint-primary/50 focus:ring-offset-2;
   }
   
   .section-title {
