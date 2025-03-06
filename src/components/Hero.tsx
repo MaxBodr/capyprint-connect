@@ -15,7 +15,7 @@ const Hero = () => {
       });
     }
   };
-  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#fbf6ea]">
+  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gray-50">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
