@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { MessageCircle, Bot } from 'lucide-react';
-
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -11,16 +9,13 @@ const Hero = () => {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
     }
   };
-
-  return (
-    <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
@@ -28,12 +23,15 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
-        <motion.div 
-          className="md:w-1/2 text-center md:text-left mb-12 md:mb-0"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0" initial={{
+        opacity: 0,
+        y: 20
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.6
+      }}>
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
             Инновационное решение для печати
           </span>
@@ -48,12 +46,16 @@ const Hero = () => {
           </Button>
         </motion.div>
         
-        <motion.div 
-          className="md:w-1/2 flex justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <motion.div className="md:w-1/2 flex justify-center" initial={{
+        opacity: 0,
+        scale: 0.9
+      }} animate={{
+        opacity: 1,
+        scale: 1
+      }} transition={{
+        duration: 0.6,
+        delay: 0.2
+      }}>
           <div className="relative">
             <div className="w-full max-w-md">
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40 relative">
@@ -96,21 +98,11 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <motion.div 
-              className="absolute -bottom-6 -right-6 w-24 h-24 bg-capyprint-primary/20 rounded-full"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 3 }}
-            ></motion.div>
-            <motion.div 
-              className="absolute -top-6 -left-6 w-16 h-16 bg-capyprint-primary/10 rounded-full"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 4, delay: 1 }}
-            ></motion.div>
+            
+            
           </div>
         </motion.div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
