@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { MessageCircle, Bot } from 'lucide-react';
+
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -15,7 +16,9 @@ const Hero = () => {
       });
     }
   };
-  return <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+
+  return (
+    <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
@@ -23,15 +26,12 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
-        <motion.div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0" initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.6
-      }}>
+        <motion.div 
+          className="md:w-1/2 text-center md:text-left mb-12 md:mb-0" 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.6 }}
+        >
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
             Инновационное решение для печати
           </span>
@@ -46,63 +46,27 @@ const Hero = () => {
           </Button>
         </motion.div>
         
-        <motion.div className="md:w-1/2 flex justify-center" initial={{
-        opacity: 0,
-        scale: 0.9
-      }} animate={{
-        opacity: 1,
-        scale: 1
-      }} transition={{
-        duration: 0.6,
-        delay: 0.2
-      }}>
-          <div className="relative">
-            <div className="w-full max-w-md">
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 border border-white/40 relative">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    <div className="ml-4 text-sm text-gray-500">CapyPrint Bot</div>
-                  </div>
-                  {/* Логотип справа */}
-                  <img src="/Logo CapyPrint (3).png" alt="CapyPrint Logo" className="w-6 h-6 rounded-full" />
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex">
-                    <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
-                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
-                      <p className="text-sm">Добро пожаловать в CapyPrint! Что бы вы хотели распечатать сегодня?</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-end">
-                    <div className="bg-capyprint-primary/10 rounded-lg p-3 max-w-xs relative">
-                      <MessageCircle className="absolute -right-8 top-1/2 -translate-y-1/2 bg-capyprint-primary text-white p-1 rounded-full w-6 h-6" />
-                      <p className="text-sm">Мне нужно распечатать документ PDF</p>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    <div className="bg-capyprint-muted rounded-lg p-3 max-w-xs relative">
-                      <Bot className="absolute -left-8 top-1/2 -translate-y-1/2 bg-capyprint-secondary text-white p-1 rounded-full w-6 h-6" />
-                      <p className="text-sm">Отлично! Загрузите ваш PDF-файл, и я рассчитаю стоимость печати.</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-end">
-                    <div className="bg-capyprint-primary/10 rounded-lg p-3 max-w-xs animate-pulse-subtle relative">
-                      <MessageCircle className="absolute -right-8 top-1/2 -translate-y-1/2 bg-capyprint-primary text-white p-1 rounded-full w-6 h-6" />
-                      <p className="text-sm">*загружает файл...*</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <motion.div 
+          className="md:w-1/2 flex justify-center" 
+          initial={{ opacity: 0, scale: 0.9 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="relative max-w-sm w-full">
+            <img 
+              src="/lovable-uploads/02dede0b-f726-4e84-86ba-40eef7bc0d2c.png" 
+              alt="CapyPrint Bot Interface" 
+              className="w-full h-auto rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            />
             
-            
+            {/* Декоративные элементы */}
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-capyprint-primary/20 rounded-full blur-sm"></div>
+            <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-capyprint-secondary/15 rounded-full blur-md"></div>
           </div>
         </motion.div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Hero;
