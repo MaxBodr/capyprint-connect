@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,9 +36,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
                   Политика конфиденциальности
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-white/80 hover:text-white transition-colors">
