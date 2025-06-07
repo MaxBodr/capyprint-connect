@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Audience from '@/components/Audience';
 import HowItWorks from '@/components/HowItWorks';
+import AdminPanel from '@/components/AdminPanel';
 import Benefits from '@/components/Benefits';
-import ProfitCalculator from '@/components/ProfitCalculator';
+import Pricing from '@/components/Pricing';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
@@ -51,9 +53,11 @@ const Index = () => {
           transition={{ duration: 0.5 }}
         >
           <Hero />
+          <Audience />
           <HowItWorks />
+          <AdminPanel />
           <Benefits />
-          <ProfitCalculator />
+          <Pricing />
           <ContactForm />
         </motion.main>
         
