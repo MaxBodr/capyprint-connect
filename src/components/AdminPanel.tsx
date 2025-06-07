@@ -1,44 +1,21 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Users, BarChart3, Monitor, DollarSign } from 'lucide-react';
+import { Users, BarChart3, Monitor } from 'lucide-react';
 
 const AdminPanel = () => {
   const features = [
     {
-      icon: <Settings className="h-8 w-8 text-capyprint-orange" />,
-      title: "🔧 Подключать любое количество принтеров"
-    },
-    {
       icon: <Users className="h-8 w-8 text-capyprint-orange" />,
-      title: "👥 Видеть пользователей и их активность"
+      title: "Видеть пользователей и их активность"
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-capyprint-orange" />,
-      title: "📊 Контролировать лимиты и количество страниц"
+      title: "Контролировать лимиты и количество страниц"
     },
     {
       icon: <Monitor className="h-8 w-8 text-capyprint-orange" />,
-      title: "🔄 Мониторить статус печатных устройств"
-    },
-    {
-      icon: <DollarSign className="h-8 w-8 text-capyprint-orange" />,
-      title: "💰 Отслеживать выручку и эффективность"
-    }
-  ];
-
-  const mockups = [
-    {
-      title: "Дашборд",
-      description: "График печати/нагрузки"
-    },
-    {
-      title: "Пользователи",
-      description: "Пользователи + лимиты"
-    },
-    {
-      title: "Статус принтера",
-      description: "Онлайн/оффлайн"
+      title: "Мониторить статус печатных устройств"
     }
   ];
 
@@ -96,30 +73,25 @@ const AdminPanel = () => {
             ))}
           </motion.div>
 
-          {/* Mockups */}
+          {/* Single Mockup */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
           >
-            {mockups.map((mockup, index) => (
-              <motion.div 
-                key={index}
-                className="feature-card p-6"
-                variants={itemVariants}
-              >
-                <div className="h-32 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <BarChart3 className="h-12 w-12 mx-auto mb-2" />
-                    <p className="text-sm">Место для скриншота</p>
-                  </div>
+            <div className="feature-card p-6 max-w-md">
+              <div className="h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
+                <div className="text-gray-500 text-center">
+                  <BarChart3 className="h-16 w-16 mx-auto mb-3" />
+                  <p className="text-sm font-medium">Админ-панель</p>
+                  <p className="text-xs">Место для скриншота</p>
                 </div>
-                <h3 className="text-lg font-semibold text-capyprint-black mb-2">{mockup.title}</h3>
-                <p className="text-capyprint-black/70">{mockup.description}</p>
-              </motion.div>
-            ))}
+              </div>
+              <h3 className="text-lg font-semibold text-capyprint-black mb-2">Управление печатью</h3>
+              <p className="text-capyprint-black/70">Полный контроль над принтерами и пользователями</p>
+            </div>
           </motion.div>
         </div>
       </div>

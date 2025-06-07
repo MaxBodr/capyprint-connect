@@ -122,7 +122,11 @@ const Pricing = () => {
                 <div className="text-capyprint-black/70 mb-6">{plan.period}</div>
                 <Button 
                   onClick={scrollToContact}
-                  className={`w-full ${plan.isPopular ? 'cta-button' : 'bg-capyprint-muted hover:bg-capyprint-muted/80'}`}
+                  className={`w-full transition-all duration-300 ${
+                    plan.isPopular 
+                      ? 'cta-button hover:bg-capyprint-primary/90 hover:shadow-lg' 
+                      : 'bg-capyprint-muted hover:bg-capyprint-primary hover:text-white text-capyprint-black'
+                  }`}
                 >
                   Выбрать
                 </Button>
