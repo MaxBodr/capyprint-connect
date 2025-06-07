@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, CreditCard, Bell, Settings, BarChart3, Eye } from 'lucide-react';
+import { Smartphone, CreditCard, Bell, Settings, BarChart3, Eye, Package } from 'lucide-react';
 
 const HowItWorks = () => {
   const userSteps = [
