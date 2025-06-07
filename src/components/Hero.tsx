@@ -25,9 +25,9 @@ const Hero = () => {
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-primary/5 rounded-full blur-2xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
         <motion.div 
-          className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0" 
+          className="md:w-1/2 text-center md:text-left mb-12 md:mb-0" 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }}
@@ -35,67 +35,58 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-4">
             CapyPrint – Умный сервис печати через Telegram
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-xl mx-auto lg:mx-0">
+          <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-xl mx-auto md:mx-0">
             Если хочешь зарабатывать на принтере - тебе к нам.
           </p>
           <Button onClick={scrollToContact} className="cta-button text-lg mb-4">
             Попробовать
           </Button>
-          <div className="block">
-            <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
-              🚀 демо доступ на 2 недели
-            </div>
+          <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
+            🚀 демо доступ на 2 недели
           </div>
         </motion.div>
         
         <motion.div 
-          className="lg:w-1/2 flex justify-center items-center relative" 
+          className="md:w-1/2 flex justify-center relative" 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="flex items-center space-x-6">
-            {/* iPhone 16 Mockup */}
-            <div className="relative z-10">
-              <div className="w-64 h-[500px] bg-black rounded-[3rem] p-3 shadow-2xl">
-                <div className="w-full h-full bg-gray-100 rounded-[2.5rem] flex items-center justify-center border">
-                  <div className="text-gray-500 text-center">
-                    <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                    <p className="text-sm">Telegram Bot Interface</p>
-                    <p className="text-xs">Место для скриншота</p>
-                  </div>
+          {/* iPhone 16 Mockup */}
+          <div className="relative z-10">
+            <div className="w-64 h-[500px] bg-black rounded-[3rem] p-3 shadow-2xl">
+              <div className="w-full h-full bg-gray-100 rounded-[2.5rem] flex items-center justify-center border">
+                <div className="text-gray-500 text-center">
+                  <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                  <p className="text-sm">Telegram Bot Interface</p>
+                  <p className="text-xs">Место для скриншота</p>
                 </div>
-                {/* iPhone notch */}
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full"></div>
               </div>
+              {/* iPhone notch */}
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full"></div>
             </div>
-            
-            {/* MacOS Laptop Mockup */}
-            <div className="relative">
-              <div className="w-96 h-64 bg-gray-800 rounded-t-lg shadow-2xl">
-                {/* Laptop screen */}
-                <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
-                  {/* MacOS title bar */}
-                  <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="flex-1 text-center text-xs text-gray-600">Admin Panel</div>
-                  </div>
-                  {/* Window content */}
-                  <div className="p-6 bg-gray-50 h-full flex items-center justify-center">
-                    <div className="text-gray-500 text-center">
-                      <div className="w-16 h-16 bg-gray-300 rounded mx-auto mb-3"></div>
-                      <p className="text-sm font-medium">Админ-панель</p>
-                      <p className="text-xs">Место для скриншота</p>
-                    </div>
-                  </div>
+          </div>
+          
+          {/* MacOS Window Mockup */}
+          <div className="absolute top-8 -right-8 z-0 opacity-80">
+            <div className="w-80 h-52 bg-white rounded-lg shadow-xl border overflow-hidden">
+              {/* MacOS title bar */}
+              <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                <div className="flex-1 text-center text-xs text-gray-600">Admin Panel</div>
+              </div>
+              {/* Window content */}
+              <div className="p-4 bg-gray-50 h-full flex items-center justify-center">
+                <div className="text-gray-500 text-center">
+                  <div className="w-12 h-12 bg-gray-300 rounded mx-auto mb-2"></div>
+                  <p className="text-xs">Админ-панель</p>
+                  <p className="text-xs">Место для скриншота</p>
                 </div>
               </div>
-              {/* Laptop base */}
-              <div className="w-[420px] h-6 bg-gray-600 rounded-b-xl -mt-1 mx-auto shadow-lg"></div>
             </div>
           </div>
         </motion.div>
