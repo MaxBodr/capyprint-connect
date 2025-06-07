@@ -1,34 +1,29 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Monitor, Zap, Shield, MapPin } from 'lucide-react';
+import { Zap, Smartphone, Calculator, Clock } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
     {
-      icon: <Building2 className="h-10 w-10 text-capyprint-primary" />,
-      title: "Подходит для бизнеса любого размера",
-      description: "От небольших коворкингов до крупных университетских кампусов"
+      icon: <Zap className="h-10 w-10 text-capyprint-orange" />,
+      title: "Простое подключение",
+      description: "Подключение к любому принтеру без сложных настроек и специальных знаний."
     },
     {
-      icon: <Monitor className="h-10 w-10 text-capyprint-primary" />,
-      title: "Не требует нового оборудования",
-      description: "Подключаемся к вашему существующему принтеру"
+      icon: <Smartphone className="h-10 w-10 text-capyprint-orange" />,
+      title: "Управление через Telegram",
+      description: "Не нужно устанавливать дополнительные приложения или программы."
     },
     {
-      icon: <Zap className="h-10 w-10 text-capyprint-primary" />,
-      title: "Мгновенное развёртывание",
-      description: "Запуск системы за один день без сложных настроек"
+      icon: <Calculator className="h-10 w-10 text-capyprint-orange" />,
+      title: "Автоматический расчёт",
+      description: "Автоматизированный расчет стоимости и поддержка различных платежных методов."
     },
     {
-      icon: <Shield className="h-10 w-10 text-capyprint-primary" />,
-      title: "Защищённая передача файлов",
-      description: "Все документы передаются в зашифрованном виде"
-    },
-    {
-      icon: <MapPin className="h-10 w-10 text-capyprint-primary" />,
-      title: "Уже работает в 3 точках СПб",
-      description: "Проверенное решение с реальными результатами"
+      icon: <Clock className="h-10 w-10 text-capyprint-orange" />,
+      title: "Экономия времени",
+      description: "Значительная экономия времени и ресурсов для каворкингов и учебных заведений."
     }
   ];
 
@@ -57,11 +52,14 @@ const Benefits = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Почему выбирают нас</h2>
+          <h2 className="section-title">Преимущества CapyPrint</h2>
+          <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto">
+            Наш сервис максимально упрощает организацию печати, экономя ваше время и ресурсы
+          </p>
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -70,17 +68,16 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <motion.div 
               key={index} 
-              className="feature-card p-6"
+              className="feature-card"
               variants={itemVariants}
             >
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-4">
-                  <span className="text-2xl mr-2">💼</span>
                   {benefit.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-capyprint-black">{benefit.title}</h3>
-                  <p className="text-capyprint-black/70 text-sm">{benefit.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-capyprint-black">{benefit.title}</h3>
+                  <p className="text-capyprint-black/70">{benefit.description}</p>
                 </div>
               </div>
             </motion.div>

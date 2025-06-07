@@ -10,9 +10,8 @@ import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    company: '',
     name: '',
-    contact: ''
+    email: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -37,9 +36,8 @@ const ContactForm = () => {
       // Reset form after a delay
       setTimeout(() => {
         setFormData({
-          company: '',
           name: '',
-          contact: ''
+          email: ''
         });
         setSubmitted(false);
       }, 3000);
@@ -56,7 +54,10 @@ const ContactForm = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <h2 className="section-title">Запустить печать просто</h2>
+          <h2 className="section-title">Оставьте заявку</h2>
+          <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto">
+            Готовы подключить CapyPrint? Заполните форму, и мы свяжемся с вами для обсуждения деталей
+          </p>
         </motion.div>
 
         <motion.div 
@@ -69,19 +70,6 @@ const ContactForm = () => {
           <div className="glass-card p-6 rounded-2xl">
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="company">Название компании</Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Введите название компании"
-                    required
-                    className="bg-white"
-                  />
-                </div>
-                
                 <div className="space-y-2">
                   <Label htmlFor="name">Имя</Label>
                   <Input
@@ -96,13 +84,14 @@ const ContactForm = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="contact">Email / Telegram</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
-                    id="contact"
-                    name="contact"
-                    value={formData.contact}
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
                     onChange={handleChange}
-                    placeholder="Введите email или Telegram"
+                    placeholder="Введите ваш email"
                     required
                     className="bg-white"
                   />
@@ -126,13 +115,13 @@ const ContactForm = () => {
                   ) : (
                     <span className="flex items-center justify-center">
                       <SendIcon className="mr-2 h-4 w-4" />
-                      Оставить заявку
+                      Отправить заявку
                     </span>
                   )}
                 </Button>
                 
                 <p className="text-xs text-center text-capyprint-black/60">
-                  Нажимая кнопку "Оставить заявку", вы соглашаетесь с нашей{' '}
+                  Нажимая кнопку "Отправить заявку", вы соглашаетесь с нашей{' '}
                   <Link to="/privacy" className="text-capyprint-primary hover:underline">
                     политикой конфиденциальности
                   </Link>

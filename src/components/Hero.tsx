@@ -32,19 +32,18 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }}
         >
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
+            Инновационное решение для печати
+          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-4">
             CapyPrint – Умный сервис печати через Telegram
           </h1>
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-xl mx-auto md:mx-0">
-            Если хочешь зарабатывать на принтере - тебе к нам.
+            Автоматизируйте процессы печати в коворкингах, профкомах, университетах и школах. Без сложных настроек – просто, удобно, быстро!
           </p>
-          <Button onClick={scrollToContact} className="cta-button text-lg mb-4">
+          <Button onClick={scrollToContact} className="cta-button text-lg">
             Попробовать
           </Button>
-          <div className="flex items-center justify-center md:justify-start text-capyprint-primary font-medium">
-            <span className="mr-2">🚀</span>
-            <span>демо доступ на 2 недели</span>
-          </div>
         </motion.div>
         
         <motion.div 
