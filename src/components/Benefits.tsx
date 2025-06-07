@@ -1,29 +1,29 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Smartphone, Calculator, Clock } from 'lucide-react';
+import { Briefcase, Laptop, Zap, Shield, MapPin } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
     {
+      icon: <Briefcase className="h-10 w-10 text-capyprint-orange" />,
+      title: "💼 Подходит для бизнеса любого размера"
+    },
+    {
+      icon: <Laptop className="h-10 w-10 text-capyprint-orange" />,
+      title: "💻 Не требует нового оборудования — подключаемся к вашему"
+    },
+    {
       icon: <Zap className="h-10 w-10 text-capyprint-orange" />,
-      title: "Простое подключение",
-      description: "Подключение к любому принтеру без сложных настроек и специальных знаний."
+      title: "⚡ Мгновенное развёртывание"
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-capyprint-orange" />,
-      title: "Управление через Telegram",
-      description: "Не нужно устанавливать дополнительные приложения или программы."
+      icon: <Shield className="h-10 w-10 text-capyprint-orange" />,
+      title: "🛡️ Защищённая передача файлов"
     },
     {
-      icon: <Calculator className="h-10 w-10 text-capyprint-orange" />,
-      title: "Автоматический расчёт",
-      description: "Автоматизированный расчет стоимости и поддержка различных платежных методов."
-    },
-    {
-      icon: <Clock className="h-10 w-10 text-capyprint-orange" />,
-      title: "Экономия времени",
-      description: "Значительная экономия времени и ресурсов для каворкингов и учебных заведений."
+      icon: <MapPin className="h-10 w-10 text-capyprint-orange" />,
+      title: "📍 Уже работает в 3 точках СПб"
     }
   ];
 
@@ -52,14 +52,11 @@ const Benefits = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Преимущества CapyPrint</h2>
-          <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto">
-            Наш сервис максимально упрощает организацию печати, экономя ваше время и ресурсы
-          </p>
+          <h2 className="section-title">Почему выбирают нас</h2>
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,8 +73,7 @@ const Benefits = () => {
                   {benefit.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-capyprint-black">{benefit.title}</h3>
-                  <p className="text-capyprint-black/70">{benefit.description}</p>
+                  <h3 className="text-lg font-semibold text-capyprint-black">{benefit.title}</h3>
                 </div>
               </div>
             </motion.div>
