@@ -83,7 +83,6 @@ const Hero = () => {
               </div>
             </div>
             {/* Laptop base */}
-            <div className="w-full h-4 bg-gray-600 rounded-b-xl -mt-1 shadow-lg" style={{ width: '105%', marginLeft: '-2.5%' }}></div>
           </div>
           
           {/* iPhone Mockup (Overlapping on top) */}
