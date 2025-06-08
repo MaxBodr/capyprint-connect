@@ -32,6 +32,8 @@ const Hero = () => {
           bg-white rounded-[2rem] shadow-xl
           z-20
           p-2
+          md:relative md:left-auto md:top-auto md:transform-none
+          md:order-1
         "
         initial={{ opacity: 0, x: -50 }} 
         animate={{ opacity: 1, x: 0 }} 
@@ -72,6 +74,8 @@ const Hero = () => {
           min-w-[400px] min-h-[300px]
           bg-white rounded-lg shadow-lg
           z-10
+          md:relative md:top-auto md:transform-none
+          md:order-3
         "
         style={{ left: 'calc(10% + 10vw + 50px)' }} // Начинается от середины телефона
         initial={{ opacity: 0, x: 50 }} 
@@ -127,6 +131,7 @@ const Hero = () => {
           md:-translate-y-1/2
           mt-8
           md:mt-0
+          md:order-2
         "
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -159,18 +164,6 @@ const Hero = () => {
           Оставить заявку
         </Button>
       </motion.div>
-
-      {/* Мобильная адаптивность - на маленьких экранах прячем макеты и показываем только текст */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .absolute {
-            position: relative !important;
-            left: auto !important;
-            top: auto !important;
-            transform: none !important;
-          }
-        }
-      `}</style>
     </div>
   );
 };
