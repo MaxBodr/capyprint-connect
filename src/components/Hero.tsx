@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import Mockups from '@/components/Mockups';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -55,12 +54,53 @@ const Hero = () => {
           
           {/* Right Mockups */}
           <motion.div 
-            className="relative h-[600px] lg:h-[700px]"
+            className="relative flex items-center justify-center lg:justify-end"
             initial={{ opacity: 0, x: 20 }} 
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Mockups />
+            {/* Light gray background */}
+            <div className="relative bg-gray-100 rounded-2xl p-8 shadow-lg w-full max-w-2xl">
+              <div className="flex items-center justify-center space-x-8">
+                {/* Smartphone Mockup */}
+                <div className="relative">
+                  <div className="w-32 h-64 bg-white rounded-[2rem] shadow-lg border border-gray-200 relative">
+                    {/* Screen area */}
+                    <div className="absolute inset-3 bg-gray-50 rounded-[1.5rem] flex items-center justify-center">
+                      <div className="text-gray-400 text-xs text-center">
+                        <div className="w-8 h-8 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                        <p className="text-xs">Telegram Bot</p>
+                      </div>
+                    </div>
+                    {/* Home indicator */}
+                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+                
+                {/* Browser Window Mockup */}
+                <div className="relative flex-1 max-w-md">
+                  <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    {/* Browser header */}
+                    <div className="h-8 bg-gray-100 flex items-center px-4 border-b border-gray-200">
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                      <div className="flex-1 text-center text-xs text-gray-500">Admin Panel</div>
+                    </div>
+                    {/* Content area */}
+                    <div className="h-48 bg-gray-50 flex items-center justify-center">
+                      <div className="text-gray-400 text-center">
+                        <div className="w-12 h-12 bg-gray-300 rounded mx-auto mb-3"></div>
+                        <p className="text-sm font-medium">Админ-панель</p>
+                        <p className="text-xs">Управление печатью</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
