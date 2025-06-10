@@ -59,7 +59,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {/* Laptop Mockup */}
-          <div className="relative mx-auto" style={{ width: '600px', maxWidth: '90vw' }}>
+          <div className="relative mx-auto" style={{ width: '720px', maxWidth: '95vw' }}>
             <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl relative">
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
                 <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
@@ -81,7 +81,7 @@ const Hero = () => {
         
           {/* iPhone Mockup */}
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="w-48 h-96 bg-black rounded-[2.5rem] p-2 shadow-2xl">
+            <div className="w-[220px] h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
               <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
