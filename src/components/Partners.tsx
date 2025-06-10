@@ -1,16 +1,12 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const Partners = () => {
-  // Placeholder для логотипов партнеров
   const partners = [
-    { name: 'Партнер 1', logo: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=120&h=60&fit=crop&crop=center' },
-    { name: 'Партнер 2', logo: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=120&h=60&fit=crop&crop=center' },
-    { name: 'Партнер 3', logo: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=120&h=60&fit=crop&crop=center' },
-    { name: 'Партнер 4', logo: 'https://images.unsplash.com/photo-1452960962994-acf4fd70b632?w=120&h=60&fit=crop&crop=center' },
-    { name: 'Партнер 5', logo: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=120&h=60&fit=crop&crop=center' },
-    { name: 'Партнер 6', logo: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=120&h=60&fit=crop&crop=center' },
+    { name: 'ИТМО', logo: '/lovable-uploads/ITMO.png' },
+    { name: 'Ясная Поляна', logo: '/lovable-uploads/yasnya-polyana.png' },
+    { name: 'ГУАП', logo: '/lovable-uploads/guap.png' },
+    { name: 'Invelis', logo: '/lovable-uploads/Invelis.png' },
   ];
 
   return (
@@ -27,7 +23,7 @@ const Partners = () => {
             Нам доверяют
           </h2>
           <p className="text-capyprint-black/70 max-w-2xl mx-auto">
-            Более 100+ партнеров уже используют CapyPrint для развития своего бизнеса
+            Партнёры, с которыми мы уже запустили CapyPrint
           </p>
         </motion.div>
 
@@ -36,7 +32,7 @@ const Partners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center"
         >
           {partners.map((partner, index) => (
             <motion.div
@@ -64,7 +60,7 @@ const Partners = () => {
           className="text-center mt-8"
         >
           <p className="text-sm text-capyprint-black/60">
-            И еще сотни довольных клиентов по всей России
+            Мы открыты к новым партнёрствам по всей России
           </p>
         </motion.div>
       </div>
