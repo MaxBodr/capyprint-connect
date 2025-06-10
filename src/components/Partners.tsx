@@ -6,7 +6,6 @@ const Partners = () => {
     { name: 'ИТМО', logo: '/lovable-uploads/ITMO.png' },
     { name: 'Ясная Поляна', logo: '/lovable-uploads/yasnya-polyana.png' },
     { name: 'ГУАП', logo: '/lovable-uploads/guap.png' },
-    { name: 'Invelis', logo: '/lovable-uploads/Invelis.png' },
   ];
 
   return (
@@ -32,7 +31,7 @@ const Partners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-center justify-center"
         >
           {partners.map((partner, index) => (
             <motion.div
@@ -46,10 +45,7 @@ const Partners = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={
-                  "max-w-full max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" +
-                  (partner.name === "Invelis" ? " scale-110" : "")
-                }
+                className="max-w-full max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
               />
             </motion.div>
           ))}
