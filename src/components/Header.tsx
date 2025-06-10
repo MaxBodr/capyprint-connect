@@ -29,7 +29,12 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           {/* Логотип */}
-          <img src="/Logo CapyPrint (3).png" alt="CapyPrint Logo" className="h-8 mr-2" />
+          <img
+            src="/lovable-uploads/logo-capyprint.png"
+            alt="Логотип CapyPrint"
+            className="h-10 md:h-12 mr-3 transition-transform duration-300 hover:scale-105"
+          />
+
           {/* Название */}
           
         </div>
