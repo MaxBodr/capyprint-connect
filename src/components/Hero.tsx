@@ -71,9 +71,9 @@ const Hero = () => {
                   <div className="flex-1 text-center text-xs text-gray-600">Admin Panel</div>
                 </div>
                 <img
-                  src="/lovable-uploads/admin-panel-screenshot.png"
-                  alt="Скриншот админки"
-                  className="w-full h-full object-cover"
+                  src="/lovable-uploads/telegram-screenshot.png"
+                  alt="Интерфейс Telegram бота"
+                  className="w-full h-full object-cover object-top rounded-[2rem]"
                 />
               </div>
             </div>
@@ -84,9 +84,9 @@ const Hero = () => {
             <div className="w-[220px] h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
               <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
                 <img
-                  src="/lovable-uploads/telegram-screenshot.png"
-                  alt="Интерфейс Telegram бота"
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  src="/lovable-uploads/admin-panel-screenshot.png"
+                  alt="Скриншот админки"
+                  className="w-full h-[400px] object-contain object-top"
                 />
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
               </div>
