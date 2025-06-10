@@ -1,7 +1,9 @@
+
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Partners from '@/components/Partners';
 import Audience from '@/components/Audience';
 import HowItWorks from '@/components/HowItWorks';
 import AdminPanel from '@/components/AdminPanel';
@@ -53,6 +55,7 @@ const Index = () => {
           transition={{ duration: 0.5 }}
         >
           <Hero />
+          <Partners />
           <Audience />
           <HowItWorks />
           <AdminPanel />
