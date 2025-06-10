@@ -46,7 +46,10 @@ const Partners = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-w-full max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className={cn(
+                  "max-w-full max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300",
+                  partner.name === "Invelis" && "scale-110"
+                )}
               />
             </motion.div>
           ))}
