@@ -34,10 +34,10 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-capyprint-black mb-6">
               CapyPrint – Умный сервис печати через Telegram
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-capyprint-black/80">
+            <p className="text-base md:text-lg mb-8 text-capyprint-black/80">
               Если хочешь зарабатывать на принтере - тебе к нам.
             </p>
             
@@ -62,8 +62,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative w-full h-[500px] lg:h-[600px]">
-              {/* Desktop Mockup (Background) */}
-              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[400px] lg:w-[500px] h-[300px] lg:h-[375px] bg-gray-800 rounded-t-lg shadow-2xl z-10">
+              {/* Desktop Mockup (Background) - positioned from middle of phone going left */}
+              <div className="absolute top-1/2 left-8 lg:left-12 transform -translate-y-1/2 w-[350px] lg:w-[450px] h-[400px] lg:h-[500px] bg-gray-800 rounded-t-lg shadow-lg z-10">
                 {/* Desktop screen */}
                 <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
                   {/* MacOS title bar */}
@@ -86,8 +86,8 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* iPhone Mockup (Overlapping on left) */}
-              <div className="absolute top-1/2 left-8 lg:left-16 transform -translate-y-1/2 z-20">
+              {/* iPhone Mockup (Overlapping) - closer to center */}
+              <div className="absolute top-1/2 right-8 lg:right-16 transform -translate-y-1/2 z-20">
                 <div className="w-40 lg:w-48 h-80 lg:h-96 bg-black rounded-[2.5rem] p-2 shadow-2xl">
                   <div className="w-full h-full bg-gray-100 rounded-[2rem] flex items-center justify-center border relative">
                     <div className="text-gray-500 text-center">
