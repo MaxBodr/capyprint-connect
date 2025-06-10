@@ -49,21 +49,19 @@ const Hero = () => {
               🚀 демо доступ на 2 недели
             </div>
           </div>
-        </motion.div>
-        
-        {/* Stacked Mockups */}
-        <motion.div 
+                  </motion.div>
+                
+                {/* Stacked Mockups */}
+                <motion.div 
           className="relative max-w-4xl mx-auto" 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* Laptop Mockup (Background) */}
+          {/* Laptop Mockup */}
           <div className="relative mx-auto" style={{ width: '600px', maxWidth: '90vw' }}>
             <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl relative">
-              {/* Laptop screen */}
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
-                {/* MacOS title bar */}
                 <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
@@ -72,29 +70,24 @@ const Hero = () => {
                   </div>
                   <div className="flex-1 text-center text-xs text-gray-600">Admin Panel</div>
                 </div>
-                {/* Window content */}
-                <div className="p-6 bg-gray-50 h-full flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <div className="w-16 h-16 bg-gray-300 rounded mx-auto mb-3"></div>
-                    <p className="text-sm font-medium">Админ-панель</p>
-                    <p className="text-xs">Место для скриншота</p>
-                  </div>
-                </div>
+                <img
+                  src="/lovable-uploads/admin-panel-screenshot.png"
+                  alt="Скриншот админки"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
-            {/* Laptop base */}
           </div>
-          
-          {/* iPhone Mockup (Overlapping on top) */}
+        
+          {/* iPhone Mockup */}
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
             <div className="w-48 h-96 bg-black rounded-[2.5rem] p-2 shadow-2xl">
-              <div className="w-full h-full bg-gray-100 rounded-[2rem] flex items-center justify-center border relative">
-                <div className="text-gray-500 text-center">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-3"></div>
-                  <p className="text-xs font-medium">Telegram Bot</p>
-                  <p className="text-xs">Интерфейс</p>
-                </div>
-                {/* iPhone notch */}
+              <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
+                <img
+                  src="/lovable-uploads/telegram-screenshot.png"
+                  alt="Интерфейс Telegram бота"
+                  className="w-full h-full object-cover rounded-[2rem]"
+                />
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
               </div>
             </div>
