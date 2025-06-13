@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,6 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { SendIcon, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     company: '',
@@ -16,24 +14,28 @@ const ContactForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
       toast.success("Заявка успешно отправлена", {
-        description: "Мы свяжемся с вами в ближайшее время",
+        description: "Мы свяжемся с вами в ближайшее время"
       });
-      
+
       // Reset form after a delay
       setTimeout(() => {
         setFormData({
@@ -45,90 +47,64 @@ const ContactForm = () => {
       }, 3000);
     }, 1500);
   };
-
-  return (
-    <section id="contact" className="py-16">
+  return <section id="contact" className="py-0">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true,
+        margin: "-100px"
+      }} transition={{
+        duration: 0.5
+      }} className="text-center mb-8">
           <h2 className="section-title">Запустить печать просто</h2>
         </motion.div>
 
-        <motion.div 
-          className="max-w-md mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div className="max-w-md mx-auto" initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true,
+        margin: "-100px"
+      }} transition={{
+        duration: 0.6
+      }}>
           <div className="glass-card p-6 rounded-2xl">
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="company">Название компании</Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Введите название компании"
-                    required
-                    className="bg-white"
-                  />
+                  <Input id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Введите название компании" required className="bg-white" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="name">Имя</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Введите ваше имя"
-                    required
-                    className="bg-white"
-                  />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Введите ваше имя" required className="bg-white" />
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="contact">Email / Telegram</Label>
-                  <Input
-                    id="contact"
-                    name="contact"
-                    value={formData.contact}
-                    onChange={handleChange}
-                    placeholder="Введите email или Telegram"
-                    required
-                    className="bg-white"
-                  />
+                  <Input id="contact" name="contact" value={formData.contact} onChange={handleChange} placeholder="Введите email или Telegram" required className="bg-white" />
                 </div>
                 
-                <Button 
-                  type="submit" 
-                  className="cta-button w-full"
-                  disabled={isSubmitting || submitted}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center">
+                <Button type="submit" className="cta-button w-full" disabled={isSubmitting || submitted}>
+                  {isSubmitting ? <span className="flex items-center">
                       <span className="animate-spin mr-2 h-4 w-4 border-2 border-white border-opacity-50 border-t-transparent rounded-full"></span>
                       Отправка...
-                    </span>
-                  ) : submitted ? (
-                    <span className="flex items-center justify-center">
+                    </span> : submitted ? <span className="flex items-center justify-center">
                       <Check className="mr-2 h-4 w-4" />
                       Отправлено
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center">
+                    </span> : <span className="flex items-center justify-center">
                       <SendIcon className="mr-2 h-4 w-4" />
                       Оставить заявку
-                    </span>
-                  )}
+                    </span>}
                 </Button>
                 
                 <p className="text-xs text-center text-capyprint-black/60">
@@ -142,8 +118,6 @@ const ContactForm = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;
