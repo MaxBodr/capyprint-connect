@@ -1,28 +1,28 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Building, GraduationCap, Package, Users, Briefcase } from 'lucide-react';
+import { Briefcase, Laptop, Zap, Shield, MapPin } from 'lucide-react';
 
-const Audience = () => {
-  const audiences = [
+const Benefits = () => {
+  const benefits = [
     {
-      icon: <Building className="h-12 w-12 text-capyprint-orange" />,
-      title: "Коворкинги"
+      icon: <Briefcase className="h-10 w-10 text-capyprint-orange" />,
+      title: "Подходит для бизнеса любого размера"
     },
     {
-      icon: <GraduationCap className="h-12 w-12 text-capyprint-orange" />,
-      title: "Университеты и общежития"
+      icon: <Laptop className="h-10 w-10 text-capyprint-orange" />,
+      title: "Не требует нового оборудования — подключаемся к вашему"
     },
     {
-      icon: <Package className="h-12 w-12 text-capyprint-orange" />,
-      title: "Пункты выдачи заказов"
+      icon: <Zap className="h-10 w-10 text-capyprint-orange" />,
+      title: "Мгновенное развёртывание"
     },
     {
-      icon: <Users className="h-12 w-12 text-capyprint-orange" />,
-      title: "Конференц-площадки"
+      icon: <Shield className="h-10 w-10 text-capyprint-orange" />,
+      title: "Защищённая передача файлов"
     },
     {
-      icon: <Briefcase className="h-12 w-12 text-capyprint-orange" />,
-      title: "Частные бизнесы с МФУ"
+      icon: <MapPin className="h-10 w-10 text-capyprint-orange" />,
+      title: "Уже работает в 3 точках СПб"
     }
   ];
 
@@ -37,59 +37,52 @@ const Audience = () => {
   }, [isInView, hasAnimated]);
 
   return (
-    <section id="audience" className="py-20 bg-gradient-to-b from-white to-capyprint-orange/5">
+    <section id="benefits" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={false}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="section-title">Подходит для любых пространств, где есть печать</h2>
+          <h2 className="section-title">Почему выбирают нас</h2>
         </motion.div>
 
         <motion.div
           ref={ref}
-          className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
-          animate={hasAnimated ? "visible" : "hidden"}
+          animate={hasAnimated ? 'visible' : 'hidden'}
           variants={{
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.12, ease: 'easeOut' }
+              transition: { staggerChildren: 0.15, ease: 'easeOut' }
             }
           }}
         >
-          {audiences.map((audience, index) => (
+          {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="feature-card p-6 flex flex-col items-center text-center"
+              className="feature-card"
               initial={false}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
             >
-              <div className="mb-4">
-                {audience.icon}
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-4">
+                  {benefit.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-capyprint-black">{benefit.title}</h3>
+                </div>
               </div>
-              <h3 className="text-sm font-semibold text-capyprint-black">{audience.title}</h3>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          initial={false}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
-          className="text-center"
-        >
-          <p className="text-lg text-capyprint-black/80 max-w-2xl mx-auto">
-            CapyPrint помогает зарабатывать, упрощает доступ к печати и экономит время.
-          </p>
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Audience;
+export default Benefits;
