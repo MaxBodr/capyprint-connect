@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,28 +25,38 @@ const ContactForm = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
+  
+    const { company, name, contact } = formData;
+  
+    const message = `
+  📬 <b>Новая заявка на CapyPrint</b>\n
+  🏢 <b>Компания:</b> ${company}
+  👤 <b>Имя:</b> ${name}
+  📞 <b>Контакт:</b> ${contact}
+    `;
+  
+    try {
+      await axios.post(`https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'HTML'
+      });
+  
       toast.success("Заявка успешно отправлена", {
         description: "Мы свяжемся с вами в ближайшее время"
       });
-
-      // Reset form after a delay
-      setTimeout(() => {
-        setFormData({
-          company: '',
-          name: '',
-          contact: ''
-        });
-        setSubmitted(false);
-      }, 3000);
-    }, 1500);
+  
+      setSubmitted(true);
+      setFormData({ company: '', name: '', contact: '' });
+    } catch (error) {
+      console.error("Ошибка отправки в Telegram:", error);
+      toast.error("Ошибка при отправке заявки");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <section id="contact" className="py-0">
       <div className="container mx-auto px-4">
