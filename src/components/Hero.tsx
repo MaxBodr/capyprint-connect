@@ -73,7 +73,7 @@ const Hero = () => {
                 <img
                   src="/lovable-uploads/admin-panel-screenshot.png"
                   alt="Скриншот админки"
-                  className="w-full h-[400px] object-contain object-top"
+                  className="w-full aspect-[48/31] object-contain object-top"
                 />
               </div>
             </div>
