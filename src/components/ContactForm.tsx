@@ -31,19 +31,8 @@ const ContactForm = () => {
   
     const { company, name, contact } = formData;
   
-    const message = `
-  📬 <b>Новая заявка на CapyPrint</b>\n
-  🏢 <b>Компания:</b> ${company}
-  👤 <b>Имя:</b> ${name}
-  📞 <b>Контакт:</b> ${contact}
-    `;
-  
     try {
-      await axios.post(`https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID,
-        text: message,
-        parse_mode: 'HTML'
-      });
+      await axios.post('/api/telegram', { company, name, contact });
   
       toast.success("Заявка успешно отправлена", {
         description: "Мы свяжемся с вами в ближайшее время"
@@ -52,7 +41,7 @@ const ContactForm = () => {
       setSubmitted(true);
       setFormData({ company: '', name: '', contact: '' });
     } catch (error) {
-      console.error("Ошибка отправки в Telegram:", error);
+      console.error('Ошибка при отправке формы:', error);
       toast.error("Ошибка при отправке заявки");
     } finally {
       setIsSubmitting(false);
