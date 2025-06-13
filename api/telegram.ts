@@ -31,6 +31,11 @@ export default async function handler(req: Request) {
     const CHAT_ID_1 = process.env.TELEGRAM_CHAT_ID;
     const CHAT_ID_2 = process.env.TELEGRAM_CHAT_ID_2;
 
+    console.log('💬 [Telegram API Call]');
+    console.log('BOT_TOKEN is present:', !!BOT_TOKEN);
+    console.log('CHAT_ID_1:', CHAT_ID_1);
+    console.log('CHAT_ID_2:', CHAT_ID_2);
+
     const sendToTelegram = async (chatId: string, text: string) => {
       return await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
