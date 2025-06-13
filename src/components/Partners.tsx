@@ -6,6 +6,7 @@ const Partners = () => {
     { name: 'ИТМО', logo: '/lovable-uploads/ITMO.png' },
     { name: 'Ясная Поляна', logo: '/lovable-uploads/yasnya-polyana.png' },
     { name: 'ГУАП', logo: '/lovable-uploads/guap.png' },
+    { name: 'Invelis', logo: '/lovable-uploads/Invelis.png' },
   ];
 
   return (
