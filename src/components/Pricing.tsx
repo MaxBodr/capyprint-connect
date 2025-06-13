@@ -87,7 +87,7 @@ const Pricing = () => {
             <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">Что входит?</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center justify-center space-x-3">
+                <div key={index} className="flex items-center justify-start space-x-3">
                   <Check className="h-5 w-5 text-capyprint-primary" />
                   <span className="text-capyprint-black">{feature}</span>
                 </div>
