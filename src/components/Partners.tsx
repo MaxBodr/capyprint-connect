@@ -32,7 +32,7 @@ const Partners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-center justify-center"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center"
         >
           {partners.map((partner, index) => (
             <motion.div
