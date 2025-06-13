@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Building, GraduationCap, Package, Users, Briefcase } from 'lucide-react';
 
 const Audience = () => {
@@ -27,15 +26,32 @@ const Audience = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.1
-      }
-    }
-  };
+  // Анимация заголовка и описания
+  const titleRef = useRef(null);
+  const titleInView = useInView(titleRef, { threshold: 0.3 });
+  const [titleAnimated, setTitleAnimated] = useState(false);
+
+  useEffect(() => {
+    if (titleInView && !titleAnimated) setTitleAnimated(true);
+  }, [titleInView, titleAnimated]);
+
+  // Анимация иконок
+  const cardsRef = useRef(null);
+  const cardsInView = useInView(cardsRef, { threshold: 0.3 });
+  const [cardsAnimated, setCardsAnimated] = useState(false);
+
+  useEffect(() => {
+    if (cardsInView && !cardsAnimated) setCardsAnimated(true);
+  }, [cardsInView, cardsAnimated]);
+
+  // Анимация текста под блоком
+  const footerRef = useRef(null);
+  const footerInView = useInView(footerRef, { threshold: 0.3 });
+  const [footerAnimated, setFooterAnimated] = useState(false);
+
+  useEffect(() => {
+    if (footerInView && !footerAnimated) setFooterAnimated(true);
+  }, [footerInView, footerAnimated]);
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -46,25 +62,31 @@ const Audience = () => {
     <section id="audience" className="py-20 bg-gradient-to-b from-white to-capyprint-orange/5">
       <div className="container mx-auto px-4">
         <motion.div
+          ref={titleRef}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={titleAnimated ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <h2 className="section-title">Подходит для любых пространств, где есть печать</h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
+          ref={cardsRef}
           className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12"
-          variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          animate={cardsAnimated ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1 }
+            }
+          }}
         >
           {audiences.map((audience, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="feature-card p-6 flex flex-col items-center text-center"
               variants={itemVariants}
             >
@@ -77,9 +99,9 @@ const Audience = () => {
         </motion.div>
 
         <motion.div
+          ref={footerRef}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={footerAnimated ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
