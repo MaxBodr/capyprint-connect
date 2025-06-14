@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -24,43 +23,38 @@ const Hero = () => {
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-primary/5 rounded-full blur-2xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 md:px-6 text-center">
-        {/* Main Content */}
-        <motion.div 
-          className="max-w-4xl mx-auto mb-12" 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        {/* Header */}
+        <motion.div
+          className="max-w-4xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-6">
             CapyPrint – Умный сервис печати через Telegram
           </h1>
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-2xl mx-auto">
-            Если хочешь зарабатывать на принтере - тебе к нам.
+            Если хочешь зарабатывать на принтере — тебе к нам.
           </p>
-          
+
           <Button onClick={scrollToContact} className="cta-button text-lg mb-4">
             Попробовать
           </Button>
-          
+
           <div className="block">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
               🚀 демо доступ на 2 недели
             </div>
           </div>
-                  </motion.div>
-                
-                {/* Stacked Mockups */}
-                <motion.div 
-          className="relative max-w-4xl mx-auto overflow-visible" 
-          initial={{ opacity: 0, scale: 0.9 }} 
-          animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {/* Laptop Mockup */}
-          <div className="relative mx-auto" style={{ width: '720px', maxWidth: '95vw' }}>
-            <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl relative">
+        </motion.div>
+
+        {/* Mockups */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 overflow-visible px-4 sm:px-0">
+          {/* Laptop */}
+          <div className="w-full max-w-[700px] sm:w-[700px] relative">
+            <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl">
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
                 <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
                   <div className="flex space-x-2">
@@ -78,10 +72,10 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        
-          {/* iPhone Mockup */}
-          <div className="absolute -top-8 left-1/2 md:left-[60%] transform -translate-x-1/2 md:-translate-x-1/2 z-10">
-            <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
+
+          {/* Phone */}
+          <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] relative z-10">
+            <div className="w-full h-full bg-black rounded-[2.5rem] p-2 shadow-xl">
               <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
@@ -92,7 +86,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
