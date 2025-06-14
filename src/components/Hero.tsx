@@ -1,7 +1,6 @@
-
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -17,6 +16,17 @@ const Hero = () => {
     }
   };
 
+  // Анимация мокапов при скролле
+  const mockupRef = useRef(null);
+  const inView = useInView(mockupRef, { threshold: 0.3 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [inView, hasAnimated]);
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
@@ -24,13 +34,13 @@ const Hero = () => {
         <div className="absolute top-20 right-0 w-96 h-96 bg-capyprint-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-primary/5 rounded-full blur-2xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 md:px-6 text-center">
         {/* Main Content */}
-        <motion.div 
-          className="max-w-4xl mx-auto mb-12" 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.div
+          className="max-w-4xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-6">
@@ -39,24 +49,25 @@ const Hero = () => {
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-2xl mx-auto">
             Если хочешь зарабатывать на принтере - тебе к нам.
           </p>
-          
+
           <Button onClick={scrollToContact} className="cta-button text-lg mb-4">
             Попробовать
           </Button>
-          
+
           <div className="block">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
               🚀 демо доступ на 2 недели
             </div>
           </div>
-                  </motion.div>
-                
-                {/* Stacked Mockups */}
-                <motion.div 
-          className="relative max-w-4xl mx-auto overflow-visible" 
-          initial={{ opacity: 0, scale: 0.9 }} 
-          animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
+        </motion.div>
+
+        {/* Stacked Mockups */}
+        <motion.div
+          ref={mockupRef}
+          className="relative max-w-4xl mx-auto overflow-visible"
+          initial={false}
+          animate={hasAnimated ? { opacity: 1, scale: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           {/* Laptop Mockup */}
           <div className="relative mx-auto" style={{ width: '720px', maxWidth: '95vw' }}>
@@ -78,7 +89,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        
+
           {/* iPhone Mockup */}
           <div className="absolute -top-8 left-1/2 md:left-[60%] transform -translate-x-1/2 md:-translate-x-1/2 z-10">
             <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
