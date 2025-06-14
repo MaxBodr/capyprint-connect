@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="relative w-full flex flex-col items-center justify-end sm:block sm:h-[500px] mt-10 sm:mt-0">
           {/* iPhone */}
           <div className="z-10 mb-6 sm:mb-0 sm:absolute sm:-top-10 sm:left-[48%] sm:transform sm:-translate-x-1/2">
-            <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2rem] p-1 sm:p-2 shadow-xl border border-gray-300">
+            <div className="w-[220px] h-[440px] bg-black rounded-[2rem] p-2 shadow-xl border border-gray-300">
               <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
@@ -65,7 +65,7 @@ const Hero = () => {
           </div>
 
           {/* Laptop */}
-          <div className="absolute bottom-0 sm:relative sm:bottom-auto w-full max-w-[720px] sm:w-[700px] z-0">
+          <div className="absolute bottom-0 sm:relative sm:bottom-auto w-full max-w-[720px] sm:w-[700px] mx-auto z-0">
             <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl">
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
                 <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
