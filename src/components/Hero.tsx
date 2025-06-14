@@ -53,7 +53,7 @@ const Hero = () => {
                 
                 {/* Stacked Mockups */}
                 <motion.div 
-          className="relative max-w-4xl mx-auto" 
+          className="relative max-w-4xl mx-auto overflow-visible" 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -80,8 +80,8 @@ const Hero = () => {
           </div>
         
           {/* iPhone Mockup */}
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="w-[220px] h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
+          <div className="absolute -top-8 left-1/2 md:left-[60%] transform -translate-x-1/2 md:-translate-x-1/2 z-10">
+            <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2.5rem] p-2 shadow-xl">
               <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
