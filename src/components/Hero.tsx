@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 text-center">
-        {/* Header */}
+        {/* Заголовок и кнопка */}
         <motion.div
           className="max-w-4xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -43,17 +43,15 @@ const Hero = () => {
             Попробовать
           </Button>
 
-          <div className="block">
-            <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
-              🚀 демо доступ на 2 недели
-            </div>
+          <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
+            🚀 демо доступ на 2 недели
           </div>
         </motion.div>
 
-        {/* Mockups */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 overflow-visible px-4 sm:px-0">
+        {/* Мокапы */}
+        <div className="relative flex flex-col-reverse sm:flex-row items-center justify-center sm:gap-8 gap-12 sm:mt-0 mt-12 sm:h-[500px]">
           {/* Laptop */}
-          <div className="w-full max-w-[700px] sm:w-[700px] relative">
+          <div className="w-full max-w-[720px] sm:w-[700px] relative z-0">
             <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl">
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
                 <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
@@ -73,14 +71,14 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Phone */}
-          <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] relative z-10">
-            <div className="w-full h-full bg-black rounded-[2.5rem] p-2 shadow-xl">
-              <div className="w-full h-full bg-gray-100 rounded-[2rem] relative overflow-hidden">
+          {/* iPhone */}
+          <div className="w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] relative z-10 sm:absolute sm:-top-10 sm:left-[60%]">
+            <div className="w-full h-full bg-black rounded-[2rem] p-1 sm:p-2 shadow-xl border border-gray-300">
+              <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
                   alt="Интерфейс Telegram бота"
-                  className="w-full h-full object-cover object-top rounded-[2rem]"
+                  className="w-full h-full object-cover object-top rounded-[1.5rem]"
                 />
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
               </div>
