@@ -52,12 +52,12 @@ const Hero = () => {
         <div className="relative w-full flex flex-col items-center justify-end sm:block sm:h-[500px] mt-10 sm:mt-0">
           {/* iPhone */}
           <div className="z-10 mb-6 sm:mb-0 sm:absolute sm:-top-10 sm:left-[48%] sm:transform sm:-translate-x-1/2">
-            <div className="w-[220px] h-[440px] bg-black rounded-[1.2rem] p-1 shadow-xl border border-gray-300">
-              <div className="w-full h-full bg-gray-100 rounded-lg relative overflow-hidden">
+            <div className="w-[220px] h-[440px] bg-black rounded-[2rem] p-2 shadow-xl border border-gray-300">
+              <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
                 <img
                   src="/lovable-uploads/telegram-screenshot.png"
                   alt="Интерфейс Telegram бота"
-                  className="w-full h-full object-cover object-top rounded-lg"
+                  className="w-full h-full object-cover object-top rounded-[1.5rem]"
                 />
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
               </div>
