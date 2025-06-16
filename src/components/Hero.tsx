@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-capyprint-primary/5 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 text-center">
+      <div className="container mx-auto px-4 md:px-6 text-center pb-20">
         {/* Заголовок и кнопки */}
         <motion.div
           className="max-w-4xl mx-auto mb-12"
@@ -51,7 +51,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Единый png-мокап */}
-        <div className="relative flex items-center justify-center -mt-8 sm:-mt-40">
+        <div className="relative flex items-center justify-center -mt-8 sm:-mt-25">
           <img
             src="/lovable-uploads/combined-mockup.png"
             alt="Мокап CapyPrint"
