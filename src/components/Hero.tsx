@@ -74,4 +74,22 @@ const Hero = () => {
 
             {/* Phone */}
             <div className="absolute sm:-top-16 sm:left-[68%] left-1/2 transform -translate-x-1/2 sm:-translate-x-1/2 z-10">
-              <div className="w-[200px] h-[
+              <div className="w-[200px] h-[400px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2rem] p-2 shadow-xl border border-gray-300">
+                <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
+                  <img
+                    src="/lovable-uploads/telegram-screenshot.png"
+                    alt="Интерфейс Telegram бота"
+                    className="w-full h-full object-cover object-top rounded-[1.5rem]"
+                  />
+                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
