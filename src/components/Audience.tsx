@@ -22,7 +22,7 @@ const Audience = () => {
     },
     {
       icon: <Briefcase className="h-12 w-12 text-capyprint-orange" />,
-      title: "Частные бизнесы с МФУ"
+      title: "Частные бизнесы с принтерами"
     }
   ];
 
@@ -84,7 +84,7 @@ const Audience = () => {
           className="text-center"
         >
           <p className="text-lg text-capyprint-black/80 max-w-2xl mx-auto">
-            CapyPrint помогает зарабатывать, упрощает доступ к печати и экономит время.
+            CapyPrint помогает зарабатывать, упрощает доступ к печати и экономит время
           </p>
         </motion.div>
       </div>
