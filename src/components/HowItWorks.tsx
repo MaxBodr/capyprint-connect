@@ -41,7 +41,7 @@ const HowItWorks = () => {
 
         <motion.div
           ref={ref}
-          className="grid md:grid-cols-2 gap-10"
+          className="grid md:grid-cols-2 gap-8 md:gap-10"
           initial="hidden"
           animate={hasAnimated ? 'visible' : 'hidden'}
           variants={{
@@ -54,14 +54,14 @@ const HowItWorks = () => {
         >
           {/* Для пользователя */}
           <motion.div variants={{ hidden: {}, visible: {} }}>
-            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-center">
+            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-left">
               Для пользователя:
             </h3>
             <div className="space-y-4">
               {userSteps.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start gap-4"
+                  className="flex items-center gap-4"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: {
@@ -71,15 +71,15 @@ const HowItWorks = () => {
                     },
                   }}
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
-                    {step.number}
-                  </div>
                   <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                      {step.number}
+                    </div>
                     {step.icon}
-                    <span className="text-capyprint-black text-base font-medium leading-snug">
-                      {step.title}
-                    </span>
                   </div>
+                  <span className="text-capyprint-black text-base font-medium leading-snug">
+                    {step.title}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -87,14 +87,14 @@ const HowItWorks = () => {
 
           {/* Для владельца */}
           <motion.div variants={{ hidden: {}, visible: {} }}>
-            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-center">
+            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-left">
               Для владельца точки:
             </h3>
             <div className="space-y-4">
               {ownerSteps.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start gap-4"
+                  className="flex items-center gap-4"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: {
@@ -104,15 +104,15 @@ const HowItWorks = () => {
                     },
                   }}
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
-                    {step.number}
-                  </div>
                   <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                      {step.number}
+                    </div>
                     {step.icon}
-                    <span className="text-capyprint-black text-base font-medium leading-snug">
-                      {step.title}
-                    </span>
                   </div>
+                  <span className="text-capyprint-black text-base font-medium leading-snug">
+                    {step.title}
+                  </span>
                 </motion.div>
               ))}
             </div>
