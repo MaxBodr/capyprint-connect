@@ -51,8 +51,8 @@ const Hero = () => {
         </motion.div>
 
         {/* Объединённый мокап-блок */}
-        <div className="relative flex flex-col items-center justify-end sm:block sm:h-[520px] mt-10 sm:mt-0 sm:scale-100 scale-[0.92]">
-          <div className="relative w-full max-w-[720px] mx-auto">
+        <div className="relative flex flex-col items-center justify-end sm:block mt-10 sm:mt-0">
+          <div className="relative w-full max-w-[720px] sm:mx-auto scale-[0.88] sm:scale-100">
             {/* Laptop */}
             <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl">
               <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
@@ -73,23 +73,5 @@ const Hero = () => {
             </div>
 
             {/* Phone */}
-            <div className="absolute bottom-0 left-1/2 sm:left-[60%] transform -translate-x-1/2 sm:-translate-x-1/2 z-10">
-              <div className="w-[220px] h-[440px] bg-black rounded-[2rem] p-2 shadow-xl border border-gray-300">
-                <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
-                  <img
-                    src="/lovable-uploads/telegram-screenshot.png"
-                    alt="Интерфейс Telegram бота"
-                    className="w-full h-full object-cover object-top rounded-[1.5rem]"
-                  />
-                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Hero;
+            <div className="absolute sm:-top-16 sm:left-[68%] left-1/2 transform -translate-x-1/2 sm:-translate-x-1/2 z-10">
+              <div className="w-[200px] h-[
