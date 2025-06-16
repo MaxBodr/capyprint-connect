@@ -1,105 +1,84 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Upload, CreditCard, Bell, FileText, Settings } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Upload, CreditCard, FileText, Settings } from 'lucide-react';
 
 const HowItWorks = () => {
   const userSteps = [
-    {
-      icon: <Upload size={32} className="text-capyprint-orange" />,
-      title: "Загружает файл",
-      number: "1"
-    },
-    {
-      icon: <Settings size={32} className="text-capyprint-orange" />,
-      title: "Настраивает печать и количество копий",
-      number: "2"
-    },
-    {
-      icon: <CreditCard size={32} className="text-capyprint-orange" />,
-      title: "Оплачивает печать",
-      number: "3"
-    },
-    {
-      icon: <FileText size={32} className="text-capyprint-orange" />,
-      title: "Забирает документ",
-      number: "4"
-    }
+    { icon: <Upload size={28} />, title: "Загружает файл", number: "1" },
+    { icon: <Settings size={28} />, title: "Настраивает печать и количество копий", number: "2" },
+    { icon: <CreditCard size={28} />, title: "Оплачивает печать", number: "3" },
+    { icon: <FileText size={28} />, title: "Забирает документ", number: "4" },
   ];
 
   const ownerSteps = [
-    {
-      icon: <Settings size={32} className="text-capyprint-primary" />,
-      title: "Подключаемся к вашему принтеру",
-      number: "1"
-    },
-    {
-      icon: <Settings size={32} className="text-capyprint-primary" />,
-      title: "Настройка стоимости и доступности печати",
-      number: "2"
-    },
-    {
-      icon: <FileText size={32} className="text-capyprint-primary" />,
-      title: "Отслеживание статистики в админ панели",
-      number: "3"
-    },
-    {
-      icon: <CreditCard size={32} className="text-capyprint-primary" />,
-      title: "Получение прибыли с печати",
-      number: "4"
-    }
+    { icon: <Settings size={28} />, title: "Подключаемся к вашему принтеру", number: "1" },
+    { icon: <Settings size={28} />, title: "Настройка стоимости и доступности печати", number: "2" },
+    { icon: <FileText size={28} />, title: "Отслеживание статистики в админ панели", number: "3" },
+    { icon: <CreditCard size={28} />, title: "Получение прибыли с печати", number: "4" },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.3 });
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
     }
-  };
+  }, [isInView, hasAnimated]);
 
   return (
     <section id="how-it-works" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          initial={false}
+          animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center mb-10"
         >
-          <h2 className="section-title">Печать в один клик. Контроль в одном месте.</h2>
+          <h2 className="section-title">Печать в один клик. Контроль в одном месте</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <motion.div
+          ref={ref}
+          className="grid md:grid-cols-2 gap-10"
+          initial="hidden"
+          animate={hasAnimated ? 'visible' : 'hidden'}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.15, ease: 'easeOut' },
+            },
+          }}
+        >
           {/* Для пользователя */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-capyprint-black mb-2">Для пользователя:</h3>
-            </div>
-            <div className="space-y-6">
+          <motion.div variants={{ hidden: {}, visible: {} }}>
+            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-center">
+              Для пользователя:
+            </h3>
+            <div className="space-y-4">
               {userSteps.map((step, index) => (
-                <motion.div key={index} className="flex items-center space-x-4" variants={itemVariants}>
-                  <div className="flex-shrink-0 w-12 h-12 bg-capyprint-orange/10 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold text-capyprint-orange">{step.number}</span>
+                <motion.div
+                  key={index}
+                  className="flex items-start gap-4"
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.4, delay: index * 0.05 },
+                    },
+                  }}
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                    {step.number}
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     {step.icon}
-                    <span className="text-capyprint-black">{step.title}</span>
+                    <span className="text-capyprint-black text-base font-medium leading-snug">
+                      {step.title}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -107,30 +86,38 @@ const HowItWorks = () => {
           </motion.div>
 
           {/* Для владельца */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-capyprint-black mb-2">Для владельца точки:</h3>
-            </div>
-            <div className="space-y-6">
+          <motion.div variants={{ hidden: {}, visible: {} }}>
+            <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-center">
+              Для владельца точки:
+            </h3>
+            <div className="space-y-4">
               {ownerSteps.map((step, index) => (
-                <motion.div key={index} className="flex items-center space-x-4" variants={itemVariants}>
-                  <div className="flex-shrink-0 w-12 h-12 bg-capyprint-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold text-capyprint-primary">{step.number}</span>
+                <motion.div
+                  key={index}
+                  className="flex items-start gap-4"
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.4, delay: index * 0.05 },
+                    },
+                  }}
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                    {step.number}
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     {step.icon}
-                    <span className="text-capyprint-black">{step.title}</span>
+                    <span className="text-capyprint-black text-base font-medium leading-snug">
+                      {step.title}
+                    </span>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
