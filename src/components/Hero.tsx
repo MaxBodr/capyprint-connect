@@ -50,43 +50,13 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Объединённый мокап-блок */}
-        <div className="relative flex flex-col items-center justify-end sm:block mt-10 sm:mt-0">
-          <div className="relative w-full max-w-[720px] sm:mx-auto scale-[0.85] sm:scale-100 transition-all">
-            {/* Laptop */}
-            <div className="w-full aspect-[16/10] bg-gray-800 rounded-t-lg shadow-2xl">
-              <div className="w-full h-full bg-white rounded-t-lg border-2 border-gray-300 overflow-hidden">
-                <div className="h-8 bg-gray-100 flex items-center px-4 border-b">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  </div>
-                  <div className="flex-1 text-center text-xs text-gray-600">Admin Panel</div>
-                </div>
-                <img
-                  src="/lovable-uploads/admin-panel-screenshot.png"
-                  alt="Скриншот админки"
-                  className="w-full aspect-[48/31] object-contain object-top"
-                />
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div className="relative sm:absolute sm:-top-16 sm:left-[75%] left-1/2 transform sm:-translate-x-1/2 -translate-x-1/2 z-10 mt-[-80px] sm:mt-0">
-              <div className="w-[180px] h-[380px] sm:w-[220px] sm:h-[440px] bg-black rounded-[2rem] p-1.5 sm:p-2 shadow-xl border border-gray-300">
-                <div className="w-full h-full bg-gray-100 rounded-[1.5rem] relative overflow-hidden">
-                  <img
-                    src="/lovable-uploads/telegram-screenshot.png"
-                    alt="Интерфейс Telegram бота"
-                    className="w-full h-full object-cover object-top rounded-[1.5rem]"
-                  />
-                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        {/* Единый png-мокап */}
+        <div className="relative flex items-center justify-center">
+          <img
+            src="/lovable-uploads/combined-mockup.png"
+            alt="Мокап CapyPrint"
+            className="w-full max-w-[720px] sm:max-w-[900px] h-auto object-contain"
+          />
         </div>
       </div>
     </div>
