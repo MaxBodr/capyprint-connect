@@ -32,7 +32,7 @@ const Header = () => {
           <img
             src="/lovable-uploads/logo-capyprint.png"
             alt="Логотип CapyPrint"
-            className="h-10 md:h-12 mr-3 transition-transform duration-300 hover:scale-105"
+            className="h-12 md:h-16 mr-4 transition-transform duration-300 hover:scale-105"
           />
 
           {/* Название */}
