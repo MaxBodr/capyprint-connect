@@ -51,7 +51,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Единый png-мокап */}
-        <div className="relative flex items-center justify-center -mt-8 sm:-mt-20">
+        <div className="relative flex items-center justify-center -mt-8 sm:-mt-30">
           <img
             src="/lovable-uploads/combined-mockup.png"
             alt="Мокап CapyPrint"
