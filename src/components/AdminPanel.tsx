@@ -36,42 +36,39 @@ const AdminPanel = () => {
   return (
     <section id="admin-panel" className="py-20 bg-gradient-to-b from-white to-capyprint-primary/5">
       <div className="container mx-auto px-4">
-        {/* Центрируем весь блок контента по экрану */}
-        <div className="max-w-xl mx-auto text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
-          >
-            <h2 className="section-title">Панель администратора: все под контролем</h2>
-            <p className="text-lg text-capyprint-black/70 mt-4">
-              Интерфейс для бизнеса — простая админ-панель с возможностью:
-            </p>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="section-title">Панель администратора: все под контролем</h2>
+          <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto">
+            Интерфейс для бизнеса — простая админ-панель с возможностью:
+          </p>
+        </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center gap-x-4"
-                variants={itemVariants}
-              >
-                <div className="flex-shrink-0">{feature.icon}</div>
-                <span className="text-lg text-capyprint-black leading-snug">
-                  {feature.title}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-xl mx-auto space-y-6 text-left"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="flex items-center gap-x-4"
+              variants={itemVariants}
+            >
+              <div className="flex-shrink-0">{feature.icon}</div>
+              <span className="text-lg text-capyprint-black leading-snug">
+                {feature.title}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
