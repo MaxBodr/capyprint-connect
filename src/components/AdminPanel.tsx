@@ -58,7 +58,7 @@ const AdminPanel = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="flex justify-center"
         >
-          <div className="w-full max-w-[700px] space-y-6 text-left px-4 sm:px-6">
+          <div className="max-w-[700px] space-y-6 text-left mx-auto px-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
