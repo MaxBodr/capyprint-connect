@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, BarChart3, Monitor } from 'lucide-react';
@@ -50,7 +51,7 @@ const AdminPanel = () => {
           </p>
         </motion.div>
 
-        {/* Контент по центру экрана, но выровнен влево внутри */}
+        {/* Контент по центру экрана */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -58,11 +59,11 @@ const AdminPanel = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="flex justify-center"
         >
-          <div className="w-full max-w-[700px] space-y-6 text-left px-4 sm:px-6">
+          <div className="w-full max-w-[700px] space-y-6 text-center px-4 sm:px-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-x-4"
+                className="flex items-center justify-center gap-x-4"
                 variants={itemVariants}
               >
                 <div className="flex-shrink-0">{feature.icon}</div>
