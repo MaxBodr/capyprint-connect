@@ -54,7 +54,7 @@ const AdminPanel = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-xl mx-auto space-y-6 text-left pl-4 sm:pl-8"
+          className="max-w-[700px] mx-auto space-y-6 text-left px-6 sm:px-10"
         >
           {features.map((feature, index) => (
             <motion.div
