@@ -36,6 +36,7 @@ const AdminPanel = () => {
   return (
     <section id="admin-panel" className="py-20 bg-gradient-to-b from-white to-capyprint-primary/5">
       <div className="container mx-auto px-4">
+        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,25 +50,28 @@ const AdminPanel = () => {
           </p>
         </motion.div>
 
+        {/* Контент по центру экрана, но выровнен влево внутри */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-[700px] mx-auto space-y-6 text-left px-6 sm:px-10"
+          className="flex justify-center"
         >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center gap-x-4"
-              variants={itemVariants}
-            >
-              <div className="flex-shrink-0">{feature.icon}</div>
-              <span className="text-lg text-capyprint-black leading-snug">
-                {feature.title}
-              </span>
-            </motion.div>
-          ))}
+          <div className="w-full max-w-[700px] space-y-6 text-left px-4 sm:px-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center gap-x-4"
+                variants={itemVariants}
+              >
+                <div className="flex-shrink-0">{feature.icon}</div>
+                <span className="text-lg text-capyprint-black leading-snug">
+                  {feature.title}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
