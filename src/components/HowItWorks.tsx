@@ -89,10 +89,7 @@ const HowItWorks = () => {
           </motion.div>
 
           {/* Для владельца */}
-          <motion.div
-            variants={{ hidden: {}, visible: {} }}
-            className="md:-translate-x-[15%]"
-          >
+          <motion.div variants={{ hidden: {}, visible: {} }}>
             <h3 className="text-xl font-semibold text-capyprint-black mb-4 text-left">
               Для владельца точки:
             </h3>
