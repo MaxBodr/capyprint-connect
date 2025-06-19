@@ -69,30 +69,6 @@ const Pricing = () => {
         </motion.div>
 
         <div className="max-w-4xl mx-auto" ref={ref}>
-          {/* What's included */}
-          <motion.div
-            initial={false}
-            animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="glass-card p-8 rounded-2xl mb-12"
-          >
-            <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">Что входит?</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center justify-start space-x-3"
-                  initial={false}
-                  animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
-                >
-                  <Check className="h-5 w-5 text-capyprint-primary" />
-                  <span className="text-capyprint-black">{feature}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Pricing cards */}
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
@@ -137,6 +113,30 @@ const Pricing = () => {
                 </Button>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* What's included - ниже тарифов */}
+          <motion.div
+            initial={false}
+            animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="glass-card p-8 rounded-2xl mb-12"
+          >
+            <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">Что входит?</h3>
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center gap-3 break-words"
+                  initial={false}
+                  animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
+                >
+                  <Check className="h-5 w-5 text-capyprint-primary" />
+                  <span className="text-capyprint-black">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Calculator note */}
