@@ -123,11 +123,11 @@ const Pricing = () => {
             className="glass-card p-8 rounded-2xl mb-12"
           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">Что входит?</h3>
-            <div className="flex flex-col items-center space-y-4">
+            <div className="max-w-[700px] mx-auto px-6 space-y-6 text-left">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-3 text-center"
+                  className="flex items-center gap-x-4"
                   initial={false}
                   animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
