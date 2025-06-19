@@ -23,6 +23,11 @@ const ProfitCalculator = () => {
     setMonthlyProfit(monthly);
     setYearlyProfit(yearly);
 
+    if (monthly === 0) {
+      setPaybackPeriod("Все ради пользователей");
+      return;
+    }
+
     const monthsToPayback = equipmentCost / monthly;
     if (monthsToPayback < 1) {
       setPaybackPeriod("Менее 1 месяца");
