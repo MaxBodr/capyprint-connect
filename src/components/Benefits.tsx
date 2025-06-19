@@ -73,13 +73,11 @@ const Benefits = () => {
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
             >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 mr-4">
+              <div className="flex items-center h-full gap-4">
+                <div className="flex items-center justify-center h-12 w-12">
                   {benefit.icon}
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-capyprint-black">{benefit.title}</h3>
-                </div>
+                <h3 className="text-lg font-semibold text-capyprint-black">{benefit.title}</h3>
               </div>
             </motion.div>
           ))}
