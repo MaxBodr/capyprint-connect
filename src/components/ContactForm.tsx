@@ -47,7 +47,7 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
-  return <section id="contact" className="py-0">
+  return <section id="contact" className="py-0 pb-32">
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0,
