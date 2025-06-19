@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 
 const ProfitCalculator = () => {
-  const [pricePerPage, setPricePerPage] = useState(3);
+  const [pricePerPage, setPricePerPage] = useState<string | number>(3);
   const [pagesPerMonth, setPagesPerMonth] = useState(2000);
   const [monthlyProfit, setMonthlyProfit] = useState(0);
   const [yearlyProfit, setYearlyProfit] = useState(0);
@@ -15,7 +15,10 @@ const ProfitCalculator = () => {
   const equipmentCost = 5000;
 
   useEffect(() => {
-    const monthly = pricePerPage * pagesPerMonth;
+    if (pricePerPage === "" || isNaN(Number(pricePerPage))) return;
+
+    const price = Number(pricePerPage);
+    const monthly = price * pagesPerMonth;
     const yearly = monthly * 12;
     setMonthlyProfit(monthly);
     setYearlyProfit(yearly);
@@ -28,14 +31,23 @@ const ProfitCalculator = () => {
     } else {
       const years = Math.floor(monthsToPayback / 12);
       const months = Math.ceil(monthsToPayback % 12);
-      setPaybackPeriod(`${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'}${months > 0 ? ` и ${months} ${months === 1 ? 'месяц' : months < 5 ? 'месяца' : 'месяцев'}` : ''}`);
+      setPaybackPeriod(
+        `${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'}${months > 0
+          ? ` и ${months} ${months === 1 ? 'месяц' : months < 5 ? 'месяца' : 'месяцев'}`
+          : ''}`
+      );
     }
   }, [pricePerPage, pagesPerMonth]);
 
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value >= 0 && value <= 100) {
-      setPricePerPage(value);
+    const value = e.target.value;
+    if (value === "") {
+      setPricePerPage("");
+    } else {
+      const num = parseFloat(value);
+      if (!isNaN(num) && num >= 0 && num <= 100) {
+        setPricePerPage(num);
+      }
     }
   };
 
@@ -55,7 +67,7 @@ const ProfitCalculator = () => {
         >
           <h2 className="section-title">Калькулятор прибыли</h2>
           <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto lg:whitespace-nowrap lg:overflow-hidden lg:text-ellipsis">
-            Рассчитайте потенциальную прибыль от использования CapyPrint в вашей организации
+            Рассчитайте прибыль от использования CapyPrint в вашей организации
           </p>
         </motion.div>
 
@@ -83,7 +95,7 @@ const ProfitCalculator = () => {
                       min="0"
                       max="100"
                       step="0.5"
-                      value={pricePerPage}
+                      value={pricePerPage === "" ? "" : pricePerPage}
                       onChange={handlePriceChange}
                       className="bg-white"
                     />
