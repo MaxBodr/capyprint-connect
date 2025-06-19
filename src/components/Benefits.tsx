@@ -68,7 +68,7 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="feature-card"
+              className="feature-card min-h-[110px]"
               initial={false}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
