@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Briefcase, Laptop, Zap, Shield, MapPin } from 'lucide-react';
+import { Briefcase, Laptop, Zap, Shield, MapPin, CalendarClock } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
@@ -23,6 +23,10 @@ const Benefits = () => {
     {
       icon: <MapPin className="h-10 w-10 text-capyprint-orange" />,
       title: "Уже работает в 3 точках СПб"
+    },
+    {
+      icon: <CalendarClock className="h-10 w-10 text-capyprint-orange" />,
+      title: "Пробный период в 2 недели"
     }
   ];
 
@@ -69,7 +73,7 @@ const Benefits = () => {
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
             >
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <div className="flex-shrink-0 mr-4">
                   {benefit.icon}
                 </div>
