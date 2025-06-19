@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="font-bold text-xl text-white mb-4">CapyPrint</div>
             <p className="text-white/80 mb-6 max-w-md">
-              Инновационное решение для автоматизации печати в коворкингах, профкомах, 
+              Инновационное решение для автоматизации печати в коворкингах, 
               университетах и школах. Без сложных настроек – просто, удобно, быстро!
             </p>
           </div>
@@ -21,9 +21,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-white mb-4">Контакты</h3>
             <ul className="space-y-2 text-white/80">
-              <li>Email: info@capyprint.ru</li>
+              <li>Email: hello@capyprint.ru</li>
               <li>Телефон: +7 (999) 123-45-67</li>
-              <li>Telegram: @capyprint_bot</li>
+              <li>Telegram: @capy_print_bot</li>
             </ul>
           </div>
           
