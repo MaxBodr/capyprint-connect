@@ -33,10 +33,10 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-6">
-            CapyPrint – умный сервис печати через Telegram
+            Умный сервис печати через Telegram
           </h1>
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-2xl mx-auto">
-            Если хочешь зарабатывать на принтере — тебе к нам
+            Если хочешь зарабатывать на печати — тебе к нам
           </p>
 
           <div className="flex flex-col items-center gap-4">
@@ -44,9 +44,9 @@ const Hero = () => {
               Попробовать
             </Button>
 
-            <div className="inline-block px-4 py-1.5 text-sm font-medium text-capyprint-primary bg-capyprint-primary/10 rounded-full">
-              🚀 демо доступ на 2 недели
-            </div>
+            <p className="text-sm text-capyprint-black/60 mt-1">
+              🚀 Демо-доступ на 2 недели без оплаты
+            </p>
           </div>
         </motion.div>
 
