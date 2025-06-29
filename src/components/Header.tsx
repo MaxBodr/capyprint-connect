@@ -28,15 +28,17 @@ const Header = () => {
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5")}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          {/* Логотип */}
-          <img
-            src="/lovable-uploads/logo-capyprint.png"
-            alt="Логотип CapyPrint"
-            className="h-12 md:h-16 mr-4 transition-transform duration-300 hover:scale-105"
-          />
-
-          {/* Название */}
+            {/* Логотип */}
+            <img
+              src="/lovable-uploads/logo-capyprint.png"
+              alt="Логотип CapyPrint"
+              className="h-12 md:h-16 mr-2 transition-transform duration-300 hover:scale-105"
+            />
           
+            {/* Подпись к логотипу */}
+            <span className="text-xl md:text-2xl font-semibold text-capyprint-black">
+              CapyPrint
+            </span>
         </div>
         
         {/* Desktop Navigation */}
