@@ -3,50 +3,19 @@ import { motion, useInView } from 'framer-motion';
 import { Upload, CreditCard, FileText, Settings } from 'lucide-react';
 
 const HowItWorks = () => {
+  // сначала — B2B, потом — B2C
   const ownerSteps = [
-    {
-      icon: <Settings size={28} />,
-      title: "Подключение к вашему принтеру",
-      number: "1"
-    },
-    {
-      icon: <Upload size={28} />,
-      title: "Настройка стоимости и лимитов печати",
-      number: "2"
-    },
-    {
-      icon: <FileText size={28} />,
-      title: "Контроль метрик и доходов",
-      number: "3"
-    },
-    {
-      icon: <CreditCard size={28} />,
-      title: "Получение прибыли с печати",
-      number: "4"
-    },
+    { icon: <Settings size={28} />, title: "Подключение к вашему принтеру", number: "1" },
+    { icon: <Upload size={28} />, title: "Настройка стоимости и лимитов печати", number: "2" },
+    { icon: <FileText size={28} />, title: "Контроль метрик и доходов", number: "3" },
+    { icon: <CreditCard size={28} />, title: "Получение прибыли с печати", number: "4" },
   ];
 
   const userSteps = [
-    {
-      icon: <Upload size={28} />,
-      title: "Загрузка файла",
-      number: "1"
-    },
-    {
-      icon: <Settings size={28} />,
-      title: "Настройка печати и копий",
-      number: "2"
-    },
-    {
-      icon: <CreditCard size={28} />,
-      title: "Оплата печати",
-      number: "3"
-    },
-    {
-      icon: <FileText size={28} />,
-      title: "Получение документов",
-      number: "4"
-    },
+    { icon: <Upload size={28} />, title: "Загрузка файла", number: "1" },
+    { icon: <Settings size={28} />, title: "Настройка печати и копий", number: "2" },
+    { icon: <CreditCard size={28} />, title: "Оплата печати", number: "3" },
+    { icon: <FileText size={28} />, title: "Получение документов", number: "4" },
   ];
 
   const ref = useRef(null);
@@ -54,9 +23,7 @@ const HowItWorks = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-    }
+    if (isInView && !hasAnimated) setHasAnimated(true);
   }, [isInView, hasAnimated]);
 
   return (
@@ -89,27 +56,31 @@ const HowItWorks = () => {
           {/* Для владельца точки (B2B) */}
           <motion.div
             variants={{ hidden: {}, visible: {} }}
-            className="text-left self-stretch justify-self-start"
+            className="
+              self-stretch             /* растягивает колонку по высоте */
+              justify-self-start       /* настраивает горизонтальное смещение */
+              text-left
+            "
           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-4">
               Для владельца точки:
             </h3>
             <div className="space-y-4">
-              {ownerSteps.map((step, index) => (
+              {ownerSteps.map((step, i) => (
                 <motion.div
-                  key={index}
+                  key={i}
                   className="flex items-center gap-4"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: {
                       opacity: 1,
                       y: 0,
-                      transition: { duration: 0.4, delay: index * 0.05 },
+                      transition: { duration: 0.4, delay: i * 0.05 },
                     },
                   }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                    <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
                       {step.number}
                     </div>
                     {step.icon}
@@ -125,27 +96,31 @@ const HowItWorks = () => {
           {/* Для пользователя (B2C) */}
           <motion.div
             variants={{ hidden: {}, visible: {} }}
-            className="text-left self-stretch md:justify-self-end"
+            className="
+              self-stretch              /* растягивает колонку по высоте */
+              justify-self-end md:justify-self-end  /* прижимает правый край к контейнеру */
+              text-left
+            "
           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-4">
               Для пользователя:
             </h3>
             <div className="space-y-4">
-              {userSteps.map((step, index) => (
+              {userSteps.map((step, i) => (
                 <motion.div
-                  key={index}
+                  key={i}
                   className="flex items-center gap-4"
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: {
                       opacity: 1,
                       y: 0,
-                      transition: { duration: 0.4, delay: index * 0.05 },
+                      transition: { duration: 0.4, delay: i * 0.05 },
                     },
                   }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-capyprint-primary/10 text-capyprint-primary font-bold text-sm">
+                    <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
                       {step.number}
                     </div>
                     {step.icon}
