@@ -3,7 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Upload, CreditCard, FileText, Settings } from 'lucide-react';
 
 const HowItWorks = () => {
-  // сначала — B2B, потом — B2C
   const ownerSteps = [
     { icon: <Settings size={28} />, title: "Подключение к вашему принтеру", number: "1" },
     { icon: <Upload size={28} />, title: "Настройка стоимости и лимитов печати", number: "2" },
@@ -23,7 +22,9 @@ const HowItWorks = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) setHasAnimated(true);
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+    }
   }, [isInView, hasAnimated]);
 
   return (
@@ -51,14 +52,22 @@ const HowItWorks = () => {
               transition: { staggerChildren: 0.15, ease: 'easeOut' },
             },
           }}
-          className="grid md:grid-cols-2 gap-8 md:gap-10 items-start"
+          className="
+            grid
+            md:grid-cols-2
+            gap-8
+            md:gap-x-6
+            items-start
+            md:max-w-xl
+            md:mx-auto
+          "
         >
           {/* Для владельца точки (B2B) */}
           <motion.div
             variants={{ hidden: {}, visible: {} }}
             className="
-              self-stretch             /* растягивает колонку по высоте */
-              justify-self-start       /* настраивает горизонтальное смещение */
+              self-stretch
+              justify-self-start
               text-left
             "
           >
@@ -97,8 +106,8 @@ const HowItWorks = () => {
           <motion.div
             variants={{ hidden: {}, visible: {} }}
             className="
-              self-stretch              /* растягивает колонку по высоте */
-              justify-self-end md:justify-self-end  /* прижимает правый край к контейнеру */
+              self-stretch
+              justify-self-end
               text-left
             "
           >
