@@ -27,13 +27,14 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6 text-center pb-7">
         {/* Заголовок и кнопки */}
         <motion.div
-          className="max-w-4xl mx-auto mb-12"
+          className="max-w-4xl mx-auto mb-12 pt-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-capyprint-black mb-6">
-            Умный сервис печати через Telegram
+            Умный сервис печати
+            <span className="block">через Telegram</span>
           </h1>
           <p className="text-lg md:text-xl mb-8 text-capyprint-black/80 max-w-2xl mx-auto">
             Если хочешь зарабатывать на печати — тебе к нам
