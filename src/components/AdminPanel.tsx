@@ -45,9 +45,6 @@ const AdminPanel = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">Панель администратора: все под контролем</h2>
-          <p className="text-lg text-capyprint-black/70 max-w-2xl mx-auto">
-            Интерфейс для бизнеса — простая админ-панель с возможностью:
-          </p>
         </motion.div>
 
         {/* Контент по центру, но выравнивание влево */}
