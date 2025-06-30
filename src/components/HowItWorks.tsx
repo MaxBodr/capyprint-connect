@@ -62,36 +62,35 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={false}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center mb-10"
-        >
+           initial={false}
+           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+           transition={{ duration: 0.6, ease: 'easeOut' }}
+           className="text-center mb-10 md:max-w-2xl md:mx-auto"
+         >
           <h2 className="section-title">
             Печать в один клик. Контроль в одном месте
           </h2>
         </motion.div>
 
         <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={hasAnimated ? 'visible' : 'hidden'}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.15, ease: 'easeOut' },
-            },
-          }}
-          className="grid md:grid-cols-2 gap-8 md:gap-10
-                     /* ① на десктопе центрируем весь блок под заголовок */
-                     md:max-w-2xl md:mx-auto"
-        >
+           ref={ref}
+           initial="hidden"
+           animate={hasAnimated ? 'visible' : 'hidden'}
+           variants={{
+             hidden: { opacity: 0 },
+             visible: {
+               opacity: 1,
+               transition: { staggerChildren: 0.15, ease: 'easeOut' },
+             },
+           }}
+           className="grid md:grid-cols-2 gap-8 md:gap-10
+                      md:max-w-2xl md:mx-auto items-start"
+         >
           {/* Для владельца точки (B2B) */}
           <motion.div
-            variants={{ hidden: {}, visible: {} }}
-            className="text-left"
-          >
+             variants={{ hidden: {}, visible: {} }}
+             className="text-left self-stretch justify-self-start"
+           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-4">
               Для владельца точки:
             </h3>
@@ -125,9 +124,9 @@ const HowItWorks = () => {
 
           {/* Для пользователя (B2C) */}
           <motion.div
-            variants={{ hidden: {}, visible: {} }}
-            className="text-left"
-          >
+             variants={{ hidden: {}, visible: {} }}
+             className="text-left self-stretch md:justify-self-end"
+           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-4">
               Для пользователя:
             </h3>
