@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Building, GraduationCap, Package, Users, Briefcase } from 'lucide-react';
+import { Building, GraduationCap, Package, Users } from 'lucide-react';
 
 const Audience = () => {
   const audiences = [
@@ -19,10 +19,6 @@ const Audience = () => {
     {
       icon: <Users className="h-12 w-12 text-capyprint-orange" />,
       title: "Конференц-площадки"
-    },
-    {
-      icon: <Briefcase className="h-12 w-12 text-capyprint-orange" />,
-      title: "Частные бизнесы с принтерами"
     }
   ];
 
@@ -50,7 +46,7 @@ const Audience = () => {
 
         <motion.div
           ref={ref}
-          className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
           initial="hidden"
           animate={hasAnimated ? "visible" : "hidden"}
           variants={{
@@ -83,7 +79,7 @@ const Audience = () => {
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
           className="text-center"
         >
-          <p className="text-lg text-capyprint-black/80 max-w-2xl mx-auto">
+          <p className="text-lg text-capyprint-black/80 max-w-2xl mx-auto whitespace-normal md:whitespace-nowrap">
             CapyPrint помогает зарабатывать, упрощает доступ к печати и экономит время
           </p>
         </motion.div>
