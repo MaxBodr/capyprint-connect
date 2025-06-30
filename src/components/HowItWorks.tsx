@@ -22,14 +22,13 @@ const HowItWorks = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-    }
+    if (isInView && !hasAnimated) setHasAnimated(true);
   }, [isInView, hasAnimated]);
 
   return (
     <section id="how-it-works" className="py-20">
       <div className="container mx-auto px-4">
+        {/* Заголовок */}
         <motion.div
           initial={false}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -41,106 +40,99 @@ const HowItWorks = () => {
           </h2>
         </motion.div>
 
+        {/* Контейнер колонок: flex вместо grid */}
         <motion.div
           ref={ref}
           initial="hidden"
           animate={hasAnimated ? 'visible' : 'hidden'}
           variants={{
             hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.15, ease: 'easeOut' },
-            },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15, ease: 'easeOut' } },
           }}
           className="
-            grid
-            md:grid-cols-2
-            gap-8
-            md:gap-x-24
+            flex flex-col
+            md:flex-row
+            justify-center
             items-start
-            md:max-w-xl
-            md:mx-auto
+            gap-y-8
+            md:gap-x-16
           "
         >
-          {/* Для владельца точки (B2B) */}
-          <motion.div
-            variants={{ hidden: {}, visible: {} }}
-            className="
-              self-stretch
-              justify-self-start
-              text-left
-            "
-          >
-            <h3 className="text-xl font-semibold text-capyprint-black mb-4">
-              Для владельца точки:
-            </h3>
-            <div className="space-y-4">
-              {ownerSteps.map((step, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-center gap-4"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.4, delay: i * 0.05 },
-                    },
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
-                      {step.number}
+          {/* B2B: Для владельца точки */}
+          <div className="w-full md:w-auto">
+            <motion.div
+              variants={{ hidden: {}, visible: {} }}
+              className="text-left"
+            >
+              <h3 className="text-xl font-semibold text-capyprint-black mb-4">
+                Для владельца точки:
+              </h3>
+              <div className="space-y-4">
+                {ownerSteps.map((step, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-center gap-4"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.4, delay: i * 0.05 },
+                      },
+                    }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
+                        {step.number}
+                      </div>
+                      {step.icon}
                     </div>
-                    {step.icon}
-                  </div>
-                  <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
-                    {step.title}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                    <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
+                      {step.title}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
 
-          {/* Для пользователя (B2C) */}
-          <motion.div
-            variants={{ hidden: {}, visible: {} }}
-            className="
-              self-stretch
-              justify-self-end
-              text-left
-            "
-          >
-            <h3 className="text-xl font-semibold text-capyprint-black mb-4">
-              Для пользователя:
-            </h3>
-            <div className="space-y-4">
-              {userSteps.map((step, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-center gap-4"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.4, delay: i * 0.05 },
-                    },
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
-                      {step.number}
+          {/* B2C: Для пользователя */}
+          <div className="w-full md:w-auto">
+            <motion.div
+              variants={{ hidden: {}, visible: {} }}
+              className="text-left"
+            >
+              <h3 className="text-xl font-semibold text-capyprint-black mb-4">
+                Для пользователя:
+              </h3>
+              <div className="space-y-4">
+                {userSteps.map((step, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-center gap-4"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.4, delay: i * 0.05 },
+                      },
+                    }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
+                        {step.number}
+                      </div>
+                      {step.icon}
                     </div>
-                    {step.icon}
-                  </div>
-                  <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
-                    {step.title}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                    <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
+                      {step.title}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
