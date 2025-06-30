@@ -56,7 +56,7 @@ const HowItWorks = () => {
             grid
             md:grid-cols-2
             gap-8
-            md:gap-x-6
+            md:gap-x-24
             items-start
             md:max-w-xl
             md:mx-auto
