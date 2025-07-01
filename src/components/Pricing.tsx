@@ -44,12 +44,11 @@ const Pricing = () => {
           <h2 className="section-title">Тарифы</h2>
         </motion.div>
 
-        {/* расширяем ширину контейнера на десктопе */}
+        {/* Расширенный контейнер для ПК */}
         <div className="mx-auto max-w-full md:max-w-6xl" ref={ref}>
           {/* Карточки тарифов */}
           <motion.div
-            className="grid gap-6 mb-12
-                       md:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-6 mb-12 md:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             animate={hasAnimated ? 'visible' : 'hidden'}
             variants={{
@@ -60,9 +59,7 @@ const Pricing = () => {
             {plans.map((plan, idx) => (
               <motion.div
                 key={idx}
-                className={`feature-card p-6 text-center relative ${
-                  plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''
-                }`}
+                className={`feature-card p-6 text-center relative ${plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''}`}
                 initial={false}
                 animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
@@ -90,23 +87,21 @@ const Pricing = () => {
             ))}
           </motion.div>
 
-          {/* Что входит */}
+          {/* Что входит? – белый фон только у этого контейнера */}
           <motion.div
             initial={false}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="glass-card p-8 rounded-2xl mb-12"
+            className="glass-card p-8 rounded-2xl mb-12 bg-white"
           >
             <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">
               Что входит?
             </h3>
-            {/* на десктопе одна строка из трёх, равномерно растянутая */}
-            <div className="grid grid-cols-1 gap-4
-                            md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               {features.map((feature, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-md"
+                  className="flex items-center justify-center gap-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, ease: 'easeOut', delay: idx * 0.1 }}
