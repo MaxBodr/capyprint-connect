@@ -14,7 +14,7 @@ const Benefits = () => {
     },
     {
       icon: <Zap className="h-10 w-10 text-capyprint-orange" />,
-      title: "Мгновенное развёртывание"
+      title: "Мгновенное развертывание"
     }
   ];
 
@@ -56,7 +56,7 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="feature-card min-h-[110px]"
+              className="feature-card min-h-[110px] p-4"
               initial={false}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
@@ -65,7 +65,15 @@ const Benefits = () => {
                 <div className="flex items-center justify-center h-12 w-12">
                   {benefit.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-capyprint-black whitespace-nowrap">
+                <h3 
+                  className="
+                    text-lg 
+                    font-semibold 
+                    text-capyprint-black 
+                    whitespace-normal 
+                    break-words
+                  "
+                >
                   {benefit.title}
                 </h3>
               </div>
