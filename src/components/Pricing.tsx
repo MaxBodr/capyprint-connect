@@ -38,6 +38,7 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-20 bg-gradient-to-b from-white to-capyprint-orange/5">
       <div className="container mx-auto px-4">
+        {/* Заголовок */}
         <motion.div
           initial={false}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -48,7 +49,7 @@ const Pricing = () => {
         </motion.div>
 
         <div className="max-w-4xl mx-auto" ref={ref}>
-          {/* Pricing cards */}
+          {/* Карточки тарифов */}
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
             initial="hidden"
@@ -61,7 +62,9 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
-                className={`feature-card p-6 text-center relative ${plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''}`}
+                className={`feature-card p-6 text-center relative ${
+                  plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''
+                }`}
                 initial={false}
                 animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
@@ -73,7 +76,9 @@ const Pricing = () => {
                     </span>
                   </div>
                 )}
-                <div className="text-3xl font-bold text-capyprint-black mb-2">{plan.price}</div>
+                <div className="text-3xl font-bold text-capyprint-black mb-2">
+                  {plan.price}
+                </div>
                 <div className="text-capyprint-black/70 mb-6">{plan.period}</div>
                 <Button
                   onClick={scrollToContact}
@@ -89,7 +94,7 @@ const Pricing = () => {
             ))}
           </motion.div>
 
-          {/* What's included */}
+          {/* Что входит */}
           <motion.div
             initial={false}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -101,11 +106,12 @@ const Pricing = () => {
             </h3>
             <div className="flex justify-center">
               <div className="w-full max-w-[700px]">
-                <div className="mx-auto w-fit space-y-6 text-left">
+                {/* горизонтальный список */}
+                <div className="flex justify-center flex-wrap gap-x-8 gap-y-4">
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center gap-x-4"
+                      className="flex items-center gap-x-2 whitespace-nowrap"
                       initial={false}
                       animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
@@ -119,7 +125,7 @@ const Pricing = () => {
             </div>
           </motion.div>
 
-          {/* Calculator note */}
+          {/* Примечание к калькулятору */}
           <motion.div
             initial={false}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
