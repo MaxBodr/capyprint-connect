@@ -44,10 +44,12 @@ const Pricing = () => {
           <h2 className="section-title">Тарифы</h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto" ref={ref}>
+        {/* расширяем ширину контейнера на десктопе */}
+        <div className="mx-auto max-w-full md:max-w-6xl" ref={ref}>
           {/* Карточки тарифов */}
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            className="grid gap-6 mb-12
+                       md:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             animate={hasAnimated ? 'visible' : 'hidden'}
             variants={{
@@ -58,7 +60,9 @@ const Pricing = () => {
             {plans.map((plan, idx) => (
               <motion.div
                 key={idx}
-                className={`feature-card p-6 text-center relative ${plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''}`}
+                className={`feature-card p-6 text-center relative ${
+                  plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''
+                }`}
                 initial={false}
                 animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
@@ -86,7 +90,7 @@ const Pricing = () => {
             ))}
           </motion.div>
 
-          {/* Что входит — карточки как партнёры, сразу цветные */}
+          {/* Что входит */}
           <motion.div
             initial={false}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -96,19 +100,13 @@ const Pricing = () => {
             <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">
               Что входит?
             </h3>
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6"
-              initial="hidden"
-              animate={hasAnimated ? 'visible' : 'hidden'}
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.1 } }
-              }}
-            >
+            {/* на десктопе одна строка из трёх, равномерно растянутая */}
+            <div className="grid grid-cols-1 gap-4
+                            md:grid-cols-3">
               {features.map((feature, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex items-center justify-center gap-3 p-4 bg-white rounded-lg shadow-md"
+                  className="flex items-center justify-center gap-2 p-4 bg-white rounded-lg shadow-md"
                   initial={{ opacity: 0, y: 20 }}
                   animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, ease: 'easeOut', delay: idx * 0.1 }}
@@ -119,7 +117,7 @@ const Pricing = () => {
                   </span>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Примечание к калькулятору */}
