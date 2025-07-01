@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Briefcase, Laptop, Zap, Shield, MapPin, CalendarClock } from 'lucide-react';
+import { Briefcase, Laptop, Zap } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
@@ -10,23 +10,11 @@ const Benefits = () => {
     },
     {
       icon: <Laptop className="h-10 w-10 text-capyprint-orange" />,
-      title: "Не требует нового оборудования — подключаемся к вашему"
+      title: "Работает на вашем оборудовании"
     },
     {
       icon: <Zap className="h-10 w-10 text-capyprint-orange" />,
       title: "Мгновенное развёртывание"
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-capyprint-orange" />,
-      title: "Защищённая передача файлов"
-    },
-    {
-      icon: <MapPin className="h-10 w-10 text-capyprint-orange" />,
-      title: "Уже работает в 3 точках СПб"
-    },
-    {
-      icon: <CalendarClock className="h-10 w-10 text-capyprint-orange" />,
-      title: "Пробный период в 2 недели"
     }
   ];
 
@@ -54,7 +42,7 @@ const Benefits = () => {
 
         <motion.div
           ref={ref}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           animate={hasAnimated ? 'visible' : 'hidden'}
           variants={{
@@ -77,7 +65,9 @@ const Benefits = () => {
                 <div className="flex items-center justify-center h-12 w-12">
                   {benefit.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-capyprint-black">{benefit.title}</h3>
+                <h3 className="text-lg font-semibold text-capyprint-black whitespace-nowrap">
+                  {benefit.title}
+                </h3>
               </div>
             </motion.div>
           ))}
