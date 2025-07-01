@@ -6,7 +6,7 @@ const Benefits = () => {
   const benefits = [
     {
       icon: <Briefcase className="h-10 w-10 text-capyprint-orange" />,
-      title: "Подходит для бизнеса любого размера"
+      title: "Для бизнеса любого масштаба"
     },
     {
       icon: <Laptop className="h-10 w-10 text-capyprint-orange" />,
