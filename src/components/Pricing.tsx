@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const Pricing = () => {
   const features = [
     "Доступ к панели администратора",
-    "Тех. поддержка",
+    "Техническая поддержка",
     "Установка и внедрение"
   ];
 
