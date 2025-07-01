@@ -11,24 +11,22 @@ const Pricing = () => {
   ];
 
   const plans = [
-    { period: "в месяц",     price: "2 800 ₽",  isPopular: false },
-    { period: "в квартал",   price: "8 000 ₽",  isPopular: false },
-    { period: "в полгода",   price: "15 000 ₽", isPopular: true  },
-    { period: "в год",       price: "28 000 ₽", isPopular: false },
+    { period: "в месяц",   price: "2 800 ₽",  isPopular: false },
+    { period: "в квартал", price: "8 000 ₽",  isPopular: false },
+    { period: "в полгода", price: "15 000 ₽", isPopular: true  },
+    { period: "в год",     price: "28 000 ₽", isPopular: false },
   ];
 
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (!el) return;
-    const headerOffset = 80;
-    const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-    window.scrollTo({ top, behavior: 'smooth' });
+    const offset = el.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   };
 
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold: 0.3 });
   const [hasAnimated, setHasAnimated] = useState(false);
-
   useEffect(() => {
     if (isInView && !hasAnimated) setHasAnimated(true);
   }, [isInView, hasAnimated]);
@@ -66,18 +64,14 @@ const Pricing = () => {
                 transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
               >
                 {plan.isPopular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="bg-capyprint-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                       Популярный
                     </span>
                   </div>
                 )}
-                <div className="text-3xl font-bold text-capyprint-black mb-2">
-                  {plan.price}
-                </div>
-                <div className="text-capyprint-black/70 mb-6">
-                  {plan.period}
-                </div>
+                <div className="text-3xl font-bold text-capyprint-black mb-2">{plan.price}</div>
+                <div className="text-capyprint-black/70 mb-6">{plan.period}</div>
                 <Button
                   onClick={scrollToContact}
                   className={`w-full transition-all duration-300 ${
@@ -92,7 +86,7 @@ const Pricing = () => {
             ))}
           </motion.div>
 
-          {/* Что входит */}
+          {/* Что входит — карточки как партнёры, сразу цветные */}
           <motion.div
             initial={false}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -102,22 +96,30 @@ const Pricing = () => {
             <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">
               Что входит?
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+              initial="hidden"
+              animate={hasAnimated ? 'visible' : 'hidden'}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } }
+              }}
+            >
               {features.map((feature, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex items-center justify-center sm:justify-start gap-2"
-                  initial={false}
+                  className="flex items-center justify-center gap-3 p-4 bg-white rounded-lg shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
                   animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
+                  transition={{ duration: 0.4, ease: 'easeOut', delay: idx * 0.1 }}
                 >
                   <Check className="h-5 w-5 text-capyprint-primary" />
-                  <span className="text-capyprint-black whitespace-nowrap">
+                  <span className="text-capyprint-black font-medium whitespace-nowrap">
                     {feature}
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Примечание к калькулятору */}
@@ -128,7 +130,7 @@ const Pricing = () => {
             className="text-center"
           >
             <p className="text-capyprint-black/70">
-              📈 Пример расчета выручки на 1 принтер смотрите в калькуляторе ниже
+              📈 Пример расчёта выручки на 1 принтер смотрите в калькуляторе ниже
             </p>
           </motion.div>
         </div>
