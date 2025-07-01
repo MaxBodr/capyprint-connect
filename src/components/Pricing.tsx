@@ -18,13 +18,11 @@ const Pricing = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
+    const el = document.getElementById('contact');
+    if (!el) return;
+    const headerOffset = 80;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   const ref = useRef(null);
@@ -59,15 +57,13 @@ const Pricing = () => {
               visible: { opacity: 1, transition: { staggerChildren: 0.1, ease: 'easeOut' } },
             }}
           >
-            {plans.map((plan, index) => (
+            {plans.map((plan, idx) => (
               <motion.div
-                key={index}
-                className={`feature-card p-6 text-center relative ${
-                  plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''
-                }`}
+                key={idx}
+                className={`feature-card p-6 text-center relative ${plan.isPopular ? 'ring-2 ring-capyprint-primary' : ''}`}
                 initial={false}
                 animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
               >
                 {plan.isPopular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -79,7 +75,9 @@ const Pricing = () => {
                 <div className="text-3xl font-bold text-capyprint-black mb-2">
                   {plan.price}
                 </div>
-                <div className="text-capyprint-black/70 mb-6">{plan.period}</div>
+                <div className="text-capyprint-black/70 mb-6">
+                  {plan.period}
+                </div>
                 <Button
                   onClick={scrollToContact}
                   className={`w-full transition-all duration-300 ${
@@ -101,27 +99,24 @@ const Pricing = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="glass-card p-8 rounded-2xl mb-12"
           >
-            <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center whitespace-nowrap">
+            <h3 className="text-xl font-semibold text-capyprint-black mb-6 text-center">
               Что входит?
             </h3>
-            <div className="flex justify-center">
-              <div className="w-full max-w-[700px]">
-                {/* горизонтальный список */}
-                <div className="flex justify-center flex-wrap gap-x-8 gap-y-4">
-                  {features.map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center gap-x-2 whitespace-nowrap"
-                      initial={false}
-                      animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
-                    >
-                      <Check className="h-5 w-5 text-capyprint-primary" />
-                      <span className="text-capyprint-black">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {features.map((feature, idx) => (
+                <motion.div
+                  key={idx}
+                  className="flex items-center justify-center sm:justify-start gap-2"
+                  initial={false}
+                  animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.1 }}
+                >
+                  <Check className="h-5 w-5 text-capyprint-primary" />
+                  <span className="text-capyprint-black whitespace-nowrap">
+                    {feature}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
