@@ -42,7 +42,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/terms" className="text-white/80 hover:text-white transition-colors">
-                  Условия использования
+                  Лицензионный договор
                 </Link>
               </li>
             </ul>
