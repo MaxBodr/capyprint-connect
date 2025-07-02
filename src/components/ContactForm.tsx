@@ -107,7 +107,7 @@ const ContactForm = () => {
                     </span>}
                 </Button>
                 
-                <p className="text-xs text-center text-capyprint-black/60">
+                <p className="text-xs text-left text-capyprint-black/60">
                   Нажимая кнопку "Оставить заявку", вы соглашаетесь с нашей{' '}
                   <Link to="/privacy" className="text-capyprint-primary hover:underline">
                     политикой конфиденциальности
