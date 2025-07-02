@@ -61,7 +61,7 @@ const ProfitCalculator = () => {
       setPricePerPage("");
     } else {
       const num = parseFloat(v);
-      if (!isNaN(num) && num >= 0 && num <= 100) {
+      if (!isNaN(num) && num >= 0 && num <= 50) {
         setPricePerPage(num);
       }
     }
@@ -73,7 +73,7 @@ const ProfitCalculator = () => {
       setPagesPerMonth("");
     } else {
       const num = parseInt(v);
-      if (!isNaN(num) && num >= 0 && num <= 100) {
+      if (!isNaN(num) && num >= 0 && num <= 15000) {
         setPagesPerMonth(num);
       }
     }
