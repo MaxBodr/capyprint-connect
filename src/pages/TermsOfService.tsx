@@ -25,7 +25,7 @@ const TermsOfService = () => {
           </Link>
 
           <h1 className="text-4xl font-bold text-capyprint-black mb-8">
-            Условия использования
+            Лицензионный договор
           </h1>
 
           <div className="glass-card p-8 rounded-2xl space-y-6 text-capyprint-black/80">
