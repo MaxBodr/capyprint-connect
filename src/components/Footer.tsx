@@ -22,7 +22,7 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-4">Контакты</h3>
             <ul className="space-y-2 text-white/80">
               <li>Email: hello@capyprint.ru</li>
-              <li>Телефон: +7 (999) 123-45-67</li>
+              <li>Телефон: +7 (953) 340 00 68</li>
               <li>Telegram: @capy_print_bot</li>
             </ul>
           </div>
