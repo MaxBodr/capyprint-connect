@@ -5,6 +5,11 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
+  // Сбрасываем прокрутку наверх при монтировании страницы
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-capyprint-background py-20">
       <div className="container mx-auto px-4 max-w-4xl">
