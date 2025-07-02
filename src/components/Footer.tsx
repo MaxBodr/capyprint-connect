@@ -1,9 +1,13 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-capyprint-gray py-12">
+  
+  return (
+    <footer className="bg-capyprint-gray py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -27,9 +31,9 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-4">Информация</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link to="/about" className="text-white/80 hover:text-white transition-colors">
                   О компании
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
@@ -37,9 +41,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link to="/terms" className="text-white/80 hover:text-white transition-colors">
                   Условия использования
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -56,10 +60,11 @@ const Footer = () => {
                 <path d="M16.5 0.5L1.5 6.5L6.5 8.5L10.5 13.5L16.5 0.5Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
               </svg>
             </a>
-            
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
