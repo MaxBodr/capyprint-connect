@@ -40,7 +40,7 @@ const HowItWorks = () => {
           </h2>
         </motion.div>
 
-        {/* Контейнер колонок: flex вместо grid */}
+        {/* Контейнер колонок */}
         <motion.div
           ref={ref}
           initial="hidden"
@@ -49,21 +49,11 @@ const HowItWorks = () => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.15, ease: 'easeOut' } },
           }}
-          className="
-            flex flex-col
-            md:flex-row
-            justify-center
-            items-start
-            gap-y-8
-            md:gap-x-16
-          "
+          className="flex flex-col md:flex-row justify-center items-start gap-y-8 md:gap-x-16"
         >
-          {/* B2B: Для владельца точки */}
+          {/* Для владельца точки */}
           <div className="w-full md:w-auto">
-            <motion.div
-              variants={{ hidden: {}, visible: {} }}
-              className="text-left"
-            >
+            <motion.div variants={{ hidden: {}, visible: {} }} className="text-left">
               <h3 className="text-xl font-semibold text-capyprint-black mb-4">
                 Для владельца точки:
               </h3>
@@ -82,10 +72,16 @@ const HowItWorks = () => {
                     }}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
+                      {/* Цифра всегда */}
+                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 
+                                      flex items-center justify-center text-capyprint-primary 
+                                      font-bold text-sm">
                         {step.number}
                       </div>
-                      {step.icon}
+                      {/* Иконка скрывается на мобильных (< md) */}
+                      <div className="hidden md:flex">
+                        {step.icon}
+                      </div>
                     </div>
                     <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
                       {step.title}
@@ -96,12 +92,9 @@ const HowItWorks = () => {
             </motion.div>
           </div>
 
-          {/* B2C: Для пользователя */}
+          {/* Для пользователя */}
           <div className="w-full md:w-auto">
-            <motion.div
-              variants={{ hidden: {}, visible: {} }}
-              className="text-left"
-            >
+            <motion.div variants={{ hidden: {}, visible: {} }} className="text-left">
               <h3 className="text-xl font-semibold text-capyprint-black mb-4">
                 Для пользователя:
               </h3>
@@ -120,10 +113,14 @@ const HowItWorks = () => {
                     }}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 flex items-center justify-center text-capyprint-primary font-bold text-sm">
+                      <div className="w-10 h-10 rounded-full bg-capyprint-primary/10 
+                                      flex items-center justify-center text-capyprint-primary 
+                                      font-bold text-sm">
                         {step.number}
                       </div>
-                      {step.icon}
+                      <div className="hidden md:flex">
+                        {step.icon}
+                      </div>
                     </div>
                     <span className="text-capyprint-black text-base font-medium leading-snug whitespace-nowrap">
                       {step.title}
