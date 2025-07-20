@@ -41,7 +41,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col items-center gap-4">
-            <Button onClick={scrollToContact} className="cta-button text-lg">
+            <Button onClick={scrollToContact} className="cta-button">
               Попробовать
             </Button>
 
