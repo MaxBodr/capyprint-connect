@@ -51,7 +51,7 @@ const UserAgreement = () => {
               <h2 className="text-2xl font-semibold text-capyprint-black mb-4">
                 1. Термины и определения
               </h2>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>
                   1.1. Персональные данные – любая информация, относящаяся прямо или косвенно к определенному
                   или определяемому физическому лицу (Пользователю).
@@ -132,7 +132,7 @@ const UserAgreement = () => {
               <h2 className="text-2xl font-semibold text-capyprint-black mb-4">
                 4. Порядок обработки и хранения персональных данных пользователя
               </h2>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>
                   4.1. Персональные данные Пользователя обрабатываются и хранятся Оператором в следующих целях:
                   <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -159,7 +159,7 @@ const UserAgreement = () => {
             
               {/* 5.1 Права Пользователя */}
               <h3 className="text-xl font-semibold text-capyprint-black mb-3">5.1. Права Пользователя:</h3>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>5.1.1. на получение информации об обработке персональных данных Оператором;</li>
                 <li>5.1.2. на получение информации о наименовании и месте нахождения оператора;</li>
                 <li>5.1.3. на получение информации о сроках обработки персональных данных Пользователя, в том числе сроки их хранения;</li>
@@ -192,7 +192,7 @@ const UserAgreement = () => {
             
               {/* 5.3 Права Оператора */}
               <h3 className="text-xl font-semibold text-capyprint-black mt-6 mb-3">5.3. Оператор вправе:</h3>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>
                   5.3.1. в случае получения электронной почты Пользователя в «Telegram»-боте Оператора
                   получить от Пользователя персональные данные, указанные в п. 3.2 настоящего Соглашения;
@@ -205,7 +205,7 @@ const UserAgreement = () => {
             
               {/* 5.4 Обязанности Оператора */}
               <h3 className="text-xl font-semibold text-capyprint-black mt-6 mb-3">5.4. Оператор обязан:</h3>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>
                   5.4.1. при сборе персональных данных Пользователя предоставить Пользователю по его просьбе
                   информацию, указанную в пп. 5.1.1 – 5.1.4 настоящего Соглашения;
@@ -294,7 +294,7 @@ const UserAgreement = () => {
               <h2 className="text-2xl font-semibold text-capyprint-black mb-4">
                 6. Ответственность сторон соглашения. Порядок разрешения споров
               </h2>
-              <ul className="list-decimal pl-6 space-y-2">
+              <ul className="pl-6 space-y-2">
                 <li>
                   6.1. Оператор несет ответственность за ненадлежащее исполнение своих обязательств по настоящему
                   Соглашению в соответствии с требованиями законодательства Российской Федерации.
