@@ -9,6 +9,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import UserAgreement from './pages/UserAgreement';
 
 const queryClient = new QueryClient();
 
