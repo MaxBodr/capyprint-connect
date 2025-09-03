@@ -86,15 +86,15 @@ const Footer = () => {
         </div>
 
         {/* ФСИ блок */}
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center gap-8">
           <a href="https://fasie.ru" target="_blank" rel="noopener noreferrer">
             <img
               src="/footer_logo_fasie.png"
               alt="Фонд содействия инновациям"
-              className="h-10 object-contain"
+              className="h-16 object-contain"
             />
           </a>
-          <p className="text-white/70 text-sm leading-snug max-w-3xl">
+          <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-4xl">
             Проект CapyPrint создан при поддержке Федерального государственного бюджетного учреждения
             «Фонд содействия развитию малых форм предприятий в научно-технической сфере» в рамках
             программы «Студенческий стартап» федерального проекта «Платформа университетского технологического предпринимательства».
